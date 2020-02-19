@@ -13,8 +13,7 @@
     }
   ],
   "require": {
-    "php": ">=7.1",
-    "ext-spltype": "*"
+    "php": ">=7.2"
   },
   "autoload": {
     "psr-4": {

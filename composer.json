@@ -1,0 +1,23 @@
+{
+  "name": "l41rx/fe3h",
+  "type": "project",
+  "description": "Plan out FE3H classes",
+  "keywords": ["Fire Emblem Three Houses", "JavaScript", "Build", "Class database", "Character database"],
+  "homepage": "https://l41rx.duckdns.org",
+  "authors": [
+    {
+      "name": "June",
+      "email": "junipermcintyre@gmail.com",
+      "homepage": "https://junipermcintyre.net",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=7.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "L41rx\\FE3H\\": "src"
+    }
+  }
+}

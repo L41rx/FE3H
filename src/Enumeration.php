@@ -6,7 +6,8 @@ namespace L41rx\FE3H;
 
 abstract class Enumeration
 {
-    public function all() {
-        //return $this->getConstList(); // TODO write this myself
+    public static function all() {
+        $reflect = new \ReflectionClass(static::class);
+    	return $reflect->getConstants();
     }
 }

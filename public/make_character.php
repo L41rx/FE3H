@@ -56,13 +56,19 @@ hr {
 </style></head>
 <body>
 <!-- site -->
-<p>Make character JSON</p>
+<p>Make Character</p>
 <form id="make-character" method="POST" action="/to_json_character.php">
 	<!-- name -->
 	<div class="trait">
 		<label for="character-name">Name</label>
 		<input required type="text" id="character-name" name="character-name" />
 	</div>
+
+    <!-- slug, dbs urls -->
+    <div class="trait">
+        <label for="slug">Slug</label>
+        <input required type="text" id="slug" name="slug" />
+    </div>
 
 	<!-- gender -->
 	<div class="trait">

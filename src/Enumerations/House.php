@@ -10,16 +10,16 @@ class House extends Enumeration
 {
     const BLACK_EAGLES = [
         'slug' => 'eagles',
-        'name' => ''
+        'name' => 'Black Eagles'
     ];
 
-    const LANCE = [
-        'slug' => 'lnc',
-        'name' => 'lance'
+    const GOLDEN_DEER = [
+        'slug' => 'deer',
+        'name' => 'Golden Deer'
     ];
 
-    const AXE = [
-        'slug' => 'axe',
-        'name' => 'axe'
+    const BLUE_LIONS = [
+        'slug' => 'lions',
+        'name' => 'Blue Lions'
     ];
 }

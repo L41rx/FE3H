@@ -87,23 +87,15 @@ require_once __DIR__.'/../vendor/autoload.php';
     <div class="trait">
         <label for="tier">Tier</label>
 
-        <label for="trainee">Trainee</label>
-        <input required type="radio" name="tier" id="trainee" value="trainee" />
-
-        <label for="beginner">Beginner</label>
-        <input type="radio" name="tier" id="beginner" value="beginner" />
-
-        <label for="intermediate">Intermediate</label>
-        <input type="radio" name="tier" id="intermediate" value="intermediate" />
-
-        <label for="advanced">Advanced</label>
-        <input type="radio" name="tier" id="advanced" value="advanced" />
-
-        <label for="master">Master</label>
-        <input type="radio" name="tier" id="master" value="master" />
-
-        <label for="unique">Unique</label>
-        <input type="radio" name="tier" id="unique" value="unique" />
+        <?php
+        foreach (\L41rx\FE3H\Enumerations\CertificationTier::all() as $tier) {
+            $html = <<<HMTL
+				<label for="{$tier['slug']}">{$tier['name']}</label>
+				<input required type="radio" name="tier" id="{$tier['slug']}" value="{$tier['slug']}" />
+			HMTL;
+            echo $html;
+        }
+        ?>
     </div>
 
     <hr />
@@ -122,7 +114,7 @@ require_once __DIR__.'/../vendor/autoload.php';
 					<label for="min-stat-{$stat['slug']}">{$stat['slug']}</label>
 					<input required type="num" min="0" name="min-stat-{$stat['slug']}" id="min-stat-{$stat['slug']}" />
 				</div>
-				HMTL;
+			HMTL;
             echo $html;
         }
         ?>
@@ -135,20 +127,20 @@ require_once __DIR__.'/../vendor/autoload.php';
         foreach (\L41rx\FE3H\Enumerations\Stat::all() as $stat) {
             $html = <<<HMTL
 				<input required type="num" name="stat-growth-{$stat['slug']}" id="stat-growth-{$stat['slug']}" />
-				HMTL;
+			HMTL;
             echo $html;
         }
         ?>
     </div>
 
-    <!-- units ultimate max value for each skill -->
+    <!-- passive stat boosts when cert is equipped -->
     <div class="trait">
         <label for="stat-bonus">Stat modifiers</label>
         <?php
         foreach (\L41rx\FE3H\Enumerations\Stat::all() as $stat) {
             $html = <<<HMTL
 				<input required type="num" name="stat-bonus-{$stat['slug']}" id="stat-bonus-{$stat['slug']}" />
-				HMTL;
+			HMTL;
             echo $html;
         }
         ?>
@@ -166,7 +158,7 @@ require_once __DIR__.'/../vendor/autoload.php';
 					<label for="skill-proficiency-{$skill['slug']}">{$skill['slug']}</label>
 					<input type="checkbox" name="skill-proficiency-{$skill['slug']}" id="skill-proficiency-{$skill['slug']}" />
 				</div>
-				HMTL;
+			HMTL;
             echo $html;
         }
         ?>
@@ -184,7 +176,7 @@ require_once __DIR__.'/../vendor/autoload.php';
 				<div class="stat">
 					<select name="skill-requirement-{$skill['slug']}" id="skill-requirement-{$skill['slug']}">{$skill_level_option_html}</select>
 				</div>
-				HMTL;
+			HMTL;
             echo $html;
         }
         ?>

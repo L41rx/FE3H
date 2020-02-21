@@ -9,4 +9,6 @@ https://gamefaqs.gamespot.com/switch/204445-fire-emblem-three-houses/faqs/77702/
 for class passive stat bonuses:
 https://gamewith.net/fire-emblem-three-houses/article/show/10241
 
-
+https://serenesforest.net/three-houses/classes/class-change/
+https://serenesforest.net/three-houses/classes/base-stats/
+https://serenesforest.net/three-houses/classes/stat-boosts/

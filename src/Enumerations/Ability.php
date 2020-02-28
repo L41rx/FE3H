@@ -1,10 +1,10 @@
 <?php
 
-
 namespace L41rx\FE3H\Enumerations;
 
+use L41rx\FE3H\Enumeration;
 
-class Ability
+class Ability extends Enumeration
 {
     const PROFESSORS_GUIDANCE = [
         'slug' => 'professors_guidance',

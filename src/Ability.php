@@ -10,4 +10,5 @@ class Ability
     public string $slug;
     public string $description;
     public string $how_to_acquire;
+    public array $tags;
 }

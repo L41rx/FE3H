@@ -12,3 +12,5 @@ https://gamewith.net/fire-emblem-three-houses/article/show/10241
 https://serenesforest.net/three-houses/classes/class-change/
 https://serenesforest.net/three-houses/classes/base-stats/
 https://serenesforest.net/three-houses/classes/stat-boosts/
+
+https://fireemblem.fandom.com/wiki/List_of_Skills_in_Fire_Emblem:_Three_Houses

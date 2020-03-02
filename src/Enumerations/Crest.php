@@ -21,4 +21,10 @@ class Crest extends \L41rx\FE3H\Enumeration
         'name' => 'Minor Crest of Seiros',
         'effect' => 'Sometimes raises Might when using combat arts'
     ];
+
+    const MINOR_CREST_OF_BLAIDDYD = [
+    	'slug' => 'minor_crest_of_blaiddyd',
+    	'name' => 'Minor Crest of Blaiddyd',
+    	'effect' => 'Occasionally doubles Atk and weapon uses for combat arts'
+    ];
 }

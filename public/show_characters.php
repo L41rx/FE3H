@@ -12,16 +12,41 @@ $characters = \L41rx\FE3H\Enumerations\Character::all();
         }
 
         .character {
-            max-width: 250px;
-            border: 1px solid black;
+            width: 250px;
             padding: 20px;
             margin: 10px;
+        }
+
+        .character.eagles {
+            border: 5px solid #9e1629;
+            background: #ebd8ff;
+        }
+        .character.eagles img { box-shadow: 0 0 0 3px #9e1629; }
+
+        .character.lions {
+            border: 5px solid #1a2872;
+            background: #dddfe2;
+        }
+        .character.lions  img { box-shadow: 0 0 0 3px #1a2872; }
+        
+        .character.deer {
+            border: 5px solid yellow;
+            background: beige;
         }
 
         .character img {
             width: 100%;
             height: auto;
+            margin-bottom: 1rem;
         }
+
+
+
+        
+        .character.deer   img { box-shadow: 0 0 0 3px yellow; }
+        
+
+
 
         p {
             margin: 0;
@@ -38,7 +63,7 @@ $characters = \L41rx\FE3H\Enumerations\Character::all();
 <div class="characters">
     <?php
         foreach ($characters as $c) {
-            echo "<div class='character'>";
+            echo "<div class='character {$c['house']['slug']}'>";
 
             echo "<img src='/img/character/{$c['slug']}.png' />";
             echo "<p style='text-align: center;'><strong>{$c['name']}</strong></p>";

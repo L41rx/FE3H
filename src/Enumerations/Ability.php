@@ -51,7 +51,7 @@ class Ability extends Enumeration
     const ROYAL_LINEAGE = [
         'slug' => 'royal_lineage',
         'name' => "Royal Lineage",
-        'description' => "+20% Experience Gaine",
+        'description' => "+20% Experience Gained",
         'acquisition' => "Be unit Dimitri",
         'tags' => ['Unit passive', 'Dimitri']
     ];
@@ -67,7 +67,7 @@ class Ability extends Enumeration
     const LEICESTER_LINEAGE = [
         'slug' => 'leicester_lineage',
         'name' => "Leicester Lineage",
-        'description' => "+20% Experience Gaine",
+        'description' => "+20% Experience Gained",
         'acquisition' => "Be unit Claude",
         'tags' => ['Unit passive', 'Claude']
     ];

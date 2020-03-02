@@ -6,6 +6,15 @@ namespace L41rx\FE3H\Enumerations;
 
 class CombatArt extends \L41rx\FE3H\Enumeration
 {
+    public static function render($slug) {
+        $combat_art = self::get($slug);
+        $html = <<<HMTL
+            <span style="text-decoration: underline;" title="{$combat_art['effect']}">
+                {$combat_art['name']}
+            </span>
+        HMTL;
+        return $html;
+    }
 
     public static function default(string $property) {
         switch ($property) {
@@ -19,10 +28,19 @@ class CombatArt extends \L41rx\FE3H\Enumeration
     }
 
     // Axe arts
-    const SMASH = [
+    const AXE_SMASH = [
         'slug' => 'smash',
         'name' => 'Smash',
         'effect' => 'Unit makes a solid axe attack with high crit (+3 Mt/Atk, +20 Hit, +20 Crit, 1 Range)'
+    ];
+
+
+
+    // Lance arts
+    const LANCE_SMASH = [
+        'slug' => 'smash',
+        'name' => 'Smash',
+        'effect' => 'Unit makes a powerful lance attack with high crit (+8 Mt/Atk, +10 Hit, +20 Crit, 1 Range)'
     ];
 
 

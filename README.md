@@ -14,3 +14,10 @@ https://serenesforest.net/three-houses/classes/base-stats/
 https://serenesforest.net/three-houses/classes/stat-boosts/
 
 https://fireemblem.fandom.com/wiki/List_of_Skills_in_Fire_Emblem:_Three_Houses
+
+https://owwya.com/fire-emblem-three-houses-weapons-list-stats-fe3h-guide/
+
+https://owwya.com/fire-emblem-three-houses-weapons-forge-fe3h-forging-guide/
+
+https://owwya.com/fire-emblem-three-houses-combat-arts-list-fe3h-guide/
+// track the combat art level ups with character

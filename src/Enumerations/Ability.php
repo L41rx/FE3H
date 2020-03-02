@@ -6,6 +6,16 @@ use L41rx\FE3H\Enumeration;
 
 class Ability extends Enumeration
 {
+    public static function render($slug) {
+        $ability = self::get($slug);
+        $html = <<<HMTL
+            <span style="text-decoration: underline;" title="{$ability['description']}">
+                {$ability['name']}
+            </span>
+        HMTL;
+        return $html;
+    }
+
     const PROFESSORS_GUIDANCE = [
         'slug' => 'professors_guidance',
         'name' => "Professor's Guidance",
@@ -25,7 +35,7 @@ class Ability extends Enumeration
     const IMPERIAL_LINEAGE = [
         'slug' => 'imperial_lineage',
         'name' => "Imperial Lineage",
-        'description' => "+20% Experience Gaine",
+        'description' => "+20% Experience Gained",
         'acquisition' => "Be unit Edelgard",
         'tags' => ['Unit passive', 'Edelgard']
     ];

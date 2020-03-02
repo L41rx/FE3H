@@ -8,51 +8,56 @@ class Skill extends \L41rx\FE3H\Enumeration
 {
     const SWORD = [
         'slug' => 'srd',
-        'name' => 'sword'
+        'name' => 'Sword'
     ];
 
     const LANCE = [
         'slug' => 'lnc',
-        'name' => 'lance'
+        'name' => 'Lance'
     ];
 
     const AXE = [
         'slug' => 'axe',
-        'name' => 'axe'
+        'name' => 'Axe'
     ];
 
     const BOW = [
         'slug' => 'bow',
-        'name' => 'bow'
+        'name' => 'Bow'
     ];
 
     const BRAWL = [
         'slug' => 'brl',
-        'name' => 'brawl'
+        'name' => 'Brawl'
     ];
 
     const REASON = [
         'slug' => 'rsn',
-        'name' => 'reason'
+        'name' => 'Reason'
     ];
 
     const FAITH = [
         'slug' => 'fth',
-        'name' => 'faith'
+        'name' => 'Faith'
     ];
 
     const AUTHORITY = [
         'slug' => 'aut',
-        'name' => 'authority'
+        'name' => 'Authority'
     ];
 
-    const RIDE = [
+    const RIDING = [
         'slug' => 'rid',
-        'name' => 'ride'
+        'name' => 'Riding'
     ];
 
     const FLYING = [
         'slug' => 'fly',
-        'name' => 'flying'
+        'name' => 'Flying'
+    ];
+
+    const HEAVY_ARMOR = [
+        'slug' => 'hvy',
+        'name' => 'Heavy Armor'
     ];
 }

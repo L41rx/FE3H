@@ -72,6 +72,35 @@ abstract class Enumeration
     }
 
 
+    public static function render($slug)
+    {
+        $enum = static::class;
+        $constant = $enum::get($slug);
+        if (!isset($constant['name']))
+            throw new Exception("Tried to use the default render without setting a name... really..");
+
+        $attempt_props = ['description', 'effect'];
+
+        $title = null;
+        foreach ($attempt_props as $prop)
+            if (isset($constant[$prop]))
+                $title = $constant[$prop];
+
+        if (!is_null($title) && is_string($title))
+            $html = <<<HMTL
+                <span title="{$title}">
+                    {$constant['name']}
+                </span>
+            HMTL;
+        else
+            $html = <<<HMTL
+                {$constant['name']}
+            HMTL;
+        
+        return $html;
+    }
+
+
 
     public static function default(string $property) {
         return null;

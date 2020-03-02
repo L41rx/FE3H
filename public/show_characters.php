@@ -1,5 +1,8 @@
 <?php
 require_once __DIR__.'/../vendor/autoload.php';
+use \L41rx\FE3H\Enumerations\Crest;
+use \L41rx\FE3H\Enumerations\Stat;
+
 $characters = \L41rx\FE3H\Enumerations\Character::all();
 
 ?>
@@ -28,11 +31,12 @@ $characters = \L41rx\FE3H\Enumerations\Character::all();
             background: #dddfe2;
         }
         .character.lions  img { box-shadow: 0 0 0 3px #1a2872; }
-        
+
         .character.deer {
             border: 5px solid yellow;
             background: beige;
         }
+        .character.deer   img { box-shadow: 0 0 0 3px yellow; }
 
         .character img {
             width: 100%;
@@ -40,13 +44,10 @@ $characters = \L41rx\FE3H\Enumerations\Character::all();
             margin-bottom: 1rem;
         }
 
-
-
-        
-        .character.deer   img { box-shadow: 0 0 0 3px yellow; }
-        
-
-
+        [title] {
+            cursor: help;
+            text-decoration: underline;
+        }
 
         p {
             margin: 0;
@@ -71,10 +72,17 @@ $characters = \L41rx\FE3H\Enumerations\Character::all();
             echo "<hr />";
             echo "<p>Crests:</p><ul>";
             foreach ($c['crests'] as $crest)
-                echo "<li>".\L41rx\FE3H\Enumerations\Crest::render($crest['slug'])."</li>";
+                echo "<li>".Crest::render($crest['slug'])."</li>";
             echo "</ul>";
             echo "<hr />";
             echo "<p>Budding talent: {$c['budding_talent']['name']}</p>";
+            echo "<hr />";
+            echo "<p style='text-align: right;'>Base stats</p>";
+            echo Stat::renderSheet($c['base_stats']);
+            echo "<p style='text-align: right;'>Stat growth</p>";
+            echo Stat::renderSheet($c['stat_growth'], true);
+            echo "<p style='text-align: right;'>Max stats</p>";
+            echo Stat::renderSheet($c['max_stats']);
             echo "<hr />";
             echo "<p>Lost items:</p><ul>";
             foreach ($c['lost_items'] as $lost_item)

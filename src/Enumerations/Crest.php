@@ -6,16 +6,7 @@ namespace L41rx\FE3H\Enumerations;
 
 class Crest extends \L41rx\FE3H\Enumeration
 {
-	public static function render($slug) {
-        $crest = self::get($slug);
-        $html = <<<HMTL
-            <span style="text-decoration: underline;" title="{$crest['effect']}">
-                {$crest['name']}
-            </span>
-        HMTL;
-        return $html;
-    }
-
+    // unique crests for house leaders
     const MINOR_CREST_OF_SEIROS = [
         'slug' => 'minor_crest_of_seiros',
         'name' => 'Minor Crest of Seiros',
@@ -23,8 +14,14 @@ class Crest extends \L41rx\FE3H\Enumeration
     ];
 
     const MINOR_CREST_OF_BLAIDDYD = [
-    	'slug' => 'minor_crest_of_blaiddyd',
-    	'name' => 'Minor Crest of Blaiddyd',
-    	'effect' => 'Occasionally doubles Atk and weapon uses for combat arts'
+        'slug' => 'minor_crest_of_blaiddyd',
+        'name' => 'Minor Crest of Blaiddyd',
+        'effect' => 'Occasionally doubles Atk and weapon uses for combat arts'
+    ];
+
+    const MINOR_CREST_OF_RIEGAN = [
+        'slug' => 'minor_crest_of_riegan',
+        'name' => 'Minor Crest of Riegan',
+        'effect' => 'Sometimes restore HP equal to 30% of damage dealt when using combat arts'
     ];
 }

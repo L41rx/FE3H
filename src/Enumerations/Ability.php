@@ -6,16 +6,6 @@ use L41rx\FE3H\Enumeration;
 
 class Ability extends Enumeration
 {
-    public static function render($slug) {
-        $ability = self::get($slug);
-        $html = <<<HMTL
-            <span style="text-decoration: underline;" title="{$ability['description']}">
-                {$ability['name']}
-            </span>
-        HMTL;
-        return $html;
-    }
-
     const PROFESSORS_GUIDANCE = [
         'slug' => 'professors_guidance',
         'name' => "Professor's Guidance",

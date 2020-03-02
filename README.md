@@ -21,3 +21,6 @@ https://owwya.com/fire-emblem-three-houses-weapons-forge-fe3h-forging-guide/
 
 https://owwya.com/fire-emblem-three-houses-combat-arts-list-fe3h-guide/
 // track the combat art level ups with character
+
+https://owwya.com/fire-emblem-three-houses-spells-wiki-all-fe3h-magic-spell-list/
+// magic

@@ -6,16 +6,7 @@ namespace L41rx\FE3H\Enumerations;
 
 class CombatArt extends \L41rx\FE3H\Enumeration
 {
-    public static function render($slug) {
-        $combat_art = self::get($slug);
-        $html = <<<HMTL
-            <span style="text-decoration: underline;" title="{$combat_art['effect']}">
-                {$combat_art['name']}
-            </span>
-        HMTL;
-        return $html;
-    }
-
+    // todo add weapon uses
     public static function default(string $property) {
         switch ($property) {
             case 'min_range':
@@ -27,9 +18,11 @@ class CombatArt extends \L41rx\FE3H\Enumeration
         return parent::default();
     }
 
-    // Axe arts
+    // Axe arts (is this the same smash ?)
+    // ie can a unit slot in the same combat art smash,
+    // then use the lance, or the axe ?
     const AXE_SMASH = [
-        'slug' => 'smash',
+        'slug' => 'axe_smash',
         'name' => 'Smash',
         'effect' => 'Unit makes a solid axe attack with high crit (+3 Mt/Atk, +20 Hit, +20 Crit, 1 Range)'
     ];
@@ -38,9 +31,17 @@ class CombatArt extends \L41rx\FE3H\Enumeration
 
     // Lance arts
     const LANCE_SMASH = [
-        'slug' => 'smash',
+        'slug' => 'lance_smash',
         'name' => 'Smash',
         'effect' => 'Unit makes a powerful lance attack with high crit (+8 Mt/Atk, +10 Hit, +20 Crit, 1 Range)'
+    ];
+
+
+    // Bow arts
+    const CURVED_SHOT = [
+        'slug' => 'curved_shot',
+        'name' => 'Curved Shot',
+        'effect' => 'Unit maked an extra long curvy shot. +1 Mt/Atk, +30 Hit, +1 range?'
     ];
 
 

@@ -64,15 +64,19 @@ class Character extends \L41rx\FE3H\Enumeration
             Ability::AUTHORITY_PROWESS_LV1
         ],
         'initial_combat_arts' => [ CombatArt::AXE_SMASH ],
-        /*'magic_track' => [
+        'magic_track' => [
             'faith' => [
-                SkillRank::D['slug'] => Magic::HEAL,
-                ... etc
+                SkillRank::D['slug']     => Magic::HEAL,
+                SkillRank::DPLUS['slug'] => Magic::NOSFERATU,
+                SkillRank::C['slug']     => Magic::RECOVER,
+                SkillRank::B['slug']     => Magic::SERAPHIM
             ], 'reason' => [
-                SkillRank::D['slug'] => Magic::FIRE
+                SkillRank::D['slug']     => Magic::FIRE,
+                SkillRank::C['slug']     => Magic::BOLGANONE,
+                SkillRank::B['slug']     => Magic::LUNA,
+                SkillRank::A['slug']     => Magic::HADES
             ]
-        ] TODO magic enum*/
-
+        ]
     ];
 
 
@@ -124,15 +128,17 @@ class Character extends \L41rx\FE3H\Enumeration
             Ability::AUTHORITY_PROWESS_LV1
         ],
         'initial_combat_arts' => [ CombatArt::LANCE_SMASH ],
-        /*'magic_track' => [
+        'magic_track' => [
             'faith' => [
-                SkillRank::D['slug'] => Magic::HEAL,
-                ... etc
+                SkillRank::D['slug']     => Magic::HEAL,
+                SkillRank::DPLUS['slug'] => Magic::NOSFERATU,
+                SkillRank::C['slug']     => Magic::RECOVER,
+                SkillRank::A['slug']     => Magic::AURA
             ], 'reason' => [
-                SkillRank::D['slug'] => Magic::THUNDER
+                SkillRank::D['slug']     => Magic::THUNDER,
+                SkillRank::C['slug']     => Magic::THORON
             ]
-        ] TODO magic enum*/
-        
+        ]
     ];
 
 
@@ -186,14 +192,18 @@ class Character extends \L41rx\FE3H\Enumeration
             Ability::AUTHORITY_PROWESS_LV1
         ],
         'initial_combat_arts' => [ CombatArt::CURVED_SHOT ],
-        /*'magic_track' => [
+        'magic_track' => [
             'faith' => [
-                SkillRank::D['slug'] => Magic::HEAL,
-                ... etc
+                SkillRank::D['slug']     => Magic::HEAL,
+                SkillRank::DPLUS['slug'] => Magic::NOSFERATU,
+                SkillRank::C['slug']     => Magic::RECOVER,
+                SkillRank::A['slug']     => Magic::SILENCE
             ], 'reason' => [
-                SkillRank::D['slug'] => Magic::WIND
+                SkillRank::D['slug']     => Magic::WIND,
+                SkillRank::C['slug']     => Magic::SAGITTAE,
+                SkillRank::B['slug']     => Magic::CUTTING_GALE,
+                SkillRank::A['slug']     => Magic::EXCALIBUR
             ]
-        ] TODO magic enum*/
-        
+        ]
     ];
 }

@@ -2,6 +2,10 @@
 require_once __DIR__.'/../vendor/autoload.php';
 use \L41rx\FE3H\Enumerations\Crest;
 use \L41rx\FE3H\Enumerations\Stat;
+use \L41rx\FE3H\Enumerations\Ability;
+use \L41rx\FE3H\Enumerations\CombatArt;
+use \L41rx\FE3H\Enumerations\SkillRank;
+use \L41rx\FE3H\Enumerations\Skill;
 
 $characters = \L41rx\FE3H\Enumerations\Character::all();
 
@@ -89,8 +93,34 @@ $characters = \L41rx\FE3H\Enumerations\Character::all();
                 echo "<li>{$lost_item}</li>";
             echo "</ul>";
             echo "<hr />";
-            echo "<p>Unique ability: ".\L41rx\FE3H\Enumerations\Ability::render($c['unique_ability']['slug'])."</p>";
-
+            echo "<p>Unique ability: ".Ability::render($c['unique_ability']['slug'])."</p>";
+            echo "<hr />";
+            echo "<p>Initial proficiencies:</p><ul>";
+            foreach ($c['initial_proficiency'] as $skill_slug => $rank)
+                echo "<li>".SkillRank::render($skill_slug, $rank)."</li>";
+            echo "</ul>";
+            echo "<p>Strong skills:</p><ul>";
+            foreach ($c['strong_skills'] as $skill)
+                echo "<li>".Skill::render($skill['slug'])."</li>";
+            echo "</ul>";
+            echo "<p>Weak skills:</p><ul>";
+            foreach ($c['weak_skills'] as $skill)
+                echo "<li>".Skill::render($skill['slug'])."</li>";
+            echo "</ul>";
+            echo "<hr />";
+            echo "<p>Initial combat arts:</p><ul>";
+            foreach ($c['initial_combat_arts'] as $cb)
+                echo "<li>".CombatArt::render($cb['slug'])."</li>";
+            echo "</ul>";
+            echo "<hr />";
+            echo "<p>Faith magic track:</p><ul>";
+            foreach ($c['magic_track']['faith'] as $rank_slug => $magic)
+                echo "<li>".SkillRank::renderMagicTrack('faith', $rank_slug, $magic)."</li>";
+            echo "</ul>";
+            echo "<p>Reason magic track:</p><ul>";
+            foreach ($c['magic_track']['reason'] as $rank_slug => $magic)
+                echo "<li>".SkillRank::renderMagicTrack('reason', $rank_slug, $magic)."</li>";
+            echo "</ul>";
             echo "</div>";
         }
     ?>

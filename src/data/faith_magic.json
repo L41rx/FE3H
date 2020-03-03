@@ -1,0 +1,127 @@
+[{
+	"name": "Nosferatu",
+	"mt": 1,
+	"hit": 80,
+	"crit": 0,
+	"range": "1~2",
+	"durability": 12,
+	"weight": 8,
+	"effect": "Restores HP equal to 50% of damage dealt to enemy."
+}, {
+	"name": "Seraphim",
+	"mt": 8,
+	"hit": 75,
+	"crit": 5,
+	"range": "1~2",
+	"durability": 8,
+	"weight": 10,
+	"effect": "Effective against Monster enemies."
+}, {
+	"name": "Heal",
+	"mt": 8,
+	"hit": 100,
+	"crit": 0,
+	"range": 1,
+	"durability": 10,
+	"weight": null,
+	"effect": "Restores HP for an ally."
+}, {
+	"name": "Torch",
+	"mt": null,
+	"hit": null,
+	"crit": null,
+	"range": "1~2",
+	"durability": 10,
+	"weight": null,
+	"effect": "Increases Fog of War vision based on user’s Magic stat."
+}, {
+	"name": "Recover",
+	"mt": 30,
+	"hit": 100,
+	"crit": 0,
+	"range": 1,
+	"durability": 5,
+	"weight": null,
+	"effect": "Restores HP for an ally."
+}, {
+	"name": "Physic",
+	"mt": 8,
+	"hit": 100,
+	"crit": 0,
+	"range": "1~Mag/A",
+	"durability": 5,
+	"weight": null,
+	"effect": "Restores HP for a distant ally."
+}, {
+	"name": "Restore",
+	"mt": null,
+	"hit": null,
+	"crit": null,
+	"range": "1~Mag/B",
+	"durability": 10,
+	"weight": null,
+	"effect": "Cures status effects on all allies in range."
+}, {
+	"name": "Ward",
+	"mt": null,
+	"hit": null,
+	"crit": null,
+	"range": 1,
+	"durability": 5,
+	"weight": null,
+	"effect": "Grants Res +7 to an ally. Its effect diminishes with each turn."
+}, {
+	"name": "Aura",
+	"mt": 12,
+	"hit": 70,
+	"crit": 20,
+	"range": "1~2",
+	"durability": 3,
+	"weight": 12,
+	"effect": "Advanced light attack magic."
+}, {
+	"name": "Silence",
+	"mt": null,
+	"hit": 100,
+	"crit": null,
+	"range": "3~10",
+	"durability": 3,
+	"weight": null,
+	"effect": "Prevents enemy from using magic for 1 turn."
+}, {
+	"name": "Rescue",
+	"mt": null,
+	"hit": null,
+	"crit": null,
+	"range": "1~Mag/C",
+	"durability": 3,
+	"weight": null,
+	"effect": "Moves an ally to a space next to the user."
+}, {
+	"name": "Warp",
+	"mt": null,
+	"hit": null,
+	"crit": null,
+	"range": "1~Mag/D",
+	"durability": 1,
+	"weight": null,
+	"effect": "Moves an ally to a specified tile within range."
+}, {
+	"name": "Abraxas",
+	"mt": 14,
+	"hit": 90,
+	"crit": 5,
+	"range": "1~2",
+	"durability": 2,
+	"weight": 13,
+	"effect": "Advanced light attack magic."
+}, {
+	"name": "Fortify",
+	"mt": 15,
+	"hit": 100,
+	"crit": 0,
+	"range": "1~Mag/B",
+	"durability": 2,
+	"weight": null,
+	"effect": "Advanced light magic. Restores HP for all allies in range based on Mag."
+}]

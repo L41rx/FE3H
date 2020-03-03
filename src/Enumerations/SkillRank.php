@@ -4,6 +4,29 @@ use L41rx\FE3H\Enumeration;
 
 class SkillRank extends Enumeration
 {
+    public static function render($skill_slug, $rank = null)
+    {
+        $skill = Skill::get($skill_slug);
+        $html = <<<HMTL
+            [ {$rank['name']} ]: {$skill['name']}
+        HMTL;    
+        return $html;
+    }
+
+    public static function renderMagicTrack($skill_slug, $rank_slug, $magic)
+    {
+        $skill = Skill::get($skill_slug);
+        $rank = self::get($rank_slug);
+
+        $skill_rank_render = self::render($skill_slug, $rank);
+        $magic_render = Magic::render($magic['slug']);
+
+        $html = <<<HTML
+            {$skill_rank_render} -> {$magic_render}
+        HTML;
+        return $html;
+    }
+
     const E = [
         'slug' => 'e',
         'name' => 'E'

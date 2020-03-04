@@ -13,7 +13,7 @@ class Character extends \L41rx\FE3H\Enumeration
                 break;
         }
 
-        return parent::default();
+        return parent::default($property);
     }
 
     // Waifu squad
@@ -206,4 +206,195 @@ class Character extends \L41rx\FE3H\Enumeration
             ]
         ]
     ];
+
+    const BYLETH = [
+        'slug' => "byleth",
+        'name' => "Byleth"
+    ];
+
+    const HUBERT = [
+        'slug' => "hubert",
+        'name' => "Hubert"
+    ];
+
+    const FERDINAND = [
+        'slug' => "ferdinand",
+        'name' => "Ferdinand"
+    ];
+
+    const LINHARDT = [
+        'slug' => "linhardt",
+        'name' => "Linhardt"
+    ];
+
+    const CASPAR = [
+        'slug' => "caspar",
+        'name' => "Caspar"
+    ];
+
+    const BERNADETTA = [
+        'slug' => "bernadetta",
+        'name' => "Bernadetta"
+    ];
+
+    const DOROTHEA = [
+        'slug' => "dorothea",
+        'name' => "Dorothea"
+    ];
+
+    const PETRA = [
+        'slug' => "petra",
+        'name' => "Petra"
+    ];
+
+    const DEDUE = [
+        'slug' => "dedue",
+        'name' => "Dedue"
+    ];
+
+    const FELIX = [
+        'slug' => "felix",
+        'name' => "Felix"
+    ];
+
+    const ASHE = [
+        'slug' => "ashe",
+        'name' => "Ashe"
+    ];
+
+    const SYLVAIN = [
+        'slug' => "sylvain",
+        'name' => "Sylvain"
+    ];
+
+    const MERCEDES = [
+        'slug' => "mercedes",
+        'name' => "Mercedes"
+    ];
+
+    const ANNETTE = [
+        'slug' => "annette",
+        'name' => "Annette"
+    ];
+
+    const INGRID = [
+        'slug' => "ingrid",
+        'name' => "Ingrid"
+    ];
+
+    const LORENZ = [
+        'slug' => "lorenz",
+        'name' => "Lorenz"
+    ];
+
+    const RAPHAEL = [
+        'slug' => "raphael",
+        'name' => "Raphael"
+    ];
+
+    const IGNATZ = [
+        'slug' => "ignatz",
+        'name' => "Ignatz"
+    ];
+
+    const LYSITHEA = [
+        'slug' => "lysithea",
+        'name' => "Lysithea"
+    ];
+
+    const MARIANNE = [
+        'slug' => "marianne",
+        'name' => "Marianne"
+    ];
+
+    const HILDA = [
+        'slug' => "hilda",
+        'name' => "Hilda"
+    ];
+
+    const LEONIE = [
+        'slug' => "leonie",
+        'name' => "Leonie"
+    ];
+
+    const RHEA = [
+        'slug' => "rhea",
+        'name' => "Rhea"
+    ];
+
+    const SETETH = [
+        'slug' => "seteth",
+        'name' => "Seteth"
+    ];
+
+    const FLAYN = [
+        'slug' => "flayn",
+        'name' => "Flayn"
+    ];
+
+    const HANNEMAN = [
+        'slug' => "hanneman",
+        'name' => "Hanneman"
+    ];
+
+    const MANUELA = [
+        'slug' => "manuela",
+        'name' => "Manuela"
+    ];
+
+    const GILBERT = [
+        'slug' => "gilbert",
+        'name' => "Gilbert"
+    ];
+
+    const ALOIS = [
+        'slug' => "alois",
+        'name' => "Alois"
+    ];
+
+    const CATHERINE = [
+        'slug' => "catherine",
+        'name' => "Catherine"
+    ];
+
+    const SHAMIR = [
+        'slug' => "shamir",
+        'name' => "Shamir"
+    ];
+
+    const CYRIL = [
+        'slug' => "cyril",
+        'name' => "Cyril"
+    ];
+
+    const JERITZA = [
+        'slug' => "jeritza",
+        'name' => "Jeritza"
+    ];
+
+    const ANNA = [
+        'slug' => "anna",
+        'name' => "Anna"
+    ];
+
+    const YURI = [
+        'slug' => "yuri",
+        'name' => "Yuri"
+    ];
+
+    const BALTHUS = [
+        'slug' => "balthus",
+        'name' => "Balthus"
+    ];
+
+    const CONSTANCE = [
+        'slug' => "constance",
+        'name' => "Constance"
+    ];
+
+    const HAPI = [
+        'slug' => "hapi",
+        'name' => "Hapi"
+    ];
+
 }

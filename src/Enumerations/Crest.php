@@ -24,4 +24,8 @@ class Crest extends \L41rx\FE3H\Enumeration
         'name' => 'Minor Crest of Riegan',
         'effect' => 'Sometimes restore HP equal to 30% of damage dealt when using combat arts'
     ];
+
+    const MINOR_CREST_OF_FLAMES = [
+
+    ]
 }

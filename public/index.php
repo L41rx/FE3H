@@ -1,7 +1,14 @@
 <?php
 require_once __DIR__.'/../vendor/autoload.php';
-// header('content-type: application/json');
+use \L41rx\FE3H\Enumerations\Crest;
+use \L41rx\FE3H\Enumerations\Stat;
+use \L41rx\FE3H\Enumerations\Ability;
+use \L41rx\FE3H\Enumerations\CombatArt;
+use \L41rx\FE3H\Enumerations\SkillRank;
+use \L41rx\FE3H\Enumerations\Skill;
 
-var_dump(\L41rx\FE3H\Enumerations\Character::get('edelgard'));
+$characters = \L41rx\FE3H\Enumerations\Character::all();
 
+var_dump($characters);
 
+?>

@@ -530,8 +530,8 @@ class Ability extends Enumeration
         'slug' => 'lancefaire',
         'name' => "Lancefaire",
         'description' => "Might +5 when a lance is equipped.",
-        'acquisition' => "Make active class in list: Paladin, High Lord, Falcon Knight, Great Knight, Great Lord",
-        'tags' => ['Class passive', 'Lord', 'Paladin', 'Falcon Knight', 'Great Knight', 'High Lord', 'Great Lord']
+        'acquisition' => "Make active class in list: Paladin, High Lord, Falcon Knight, Great Knight, Great Lord. Or, reach skill level S+ in lances",
+        'tags' => ['Skill proficiency', 'Lances', 'Class passive', 'Lord', 'Paladin', 'Falcon Knight', 'Great Knight', 'High Lord', 'Great Lord']
     ];
 
 	const BOWFAIRE = [
@@ -806,14 +806,6 @@ class Ability extends Enumeration
         'tags' => ['Skill proficiency', 'Lances']
     ];
 
-	const LANCEFAIRE_ = [
-        'slug' => 'lancefaire_',
-        'name' => "Lancefaire ",
-        'description' => "Might +5 when a lance is equipped.",
-        'acquisition' => "Reach skill level S+ in lances",
-        'tags' => ['Skill proficiency', 'Lances']
-    ];
-
 	const AXE_PROWESS_LV1 = [
         'slug' => 'axe_prowess_lv1',
         'name' => "Axe Prowess Lv.1",
@@ -854,9 +846,9 @@ class Ability extends Enumeration
         'tags' => ['Skill proficiency', 'Axes']
     ];
 
-	const AXE_PROWESS_LV5_ = [
-        'slug' => 'axe_prowess_lv5_',
-        'name' => "Axe Prowess Lv.5 ",
+	const AXE_PROWESS_LV5 = [
+        'slug' => 'axe_prowess_lv5',
+        'name' => "Axe Prowess Lv.5",
         'description' => "rants Hit +20, Avoid +10 and Critical Evade +10 when equipped with Axe",
         'acquisition' => "Reach skill level A+ in axes",
         'tags' => ['Skill proficiency', 'Axes']
@@ -1150,9 +1142,9 @@ class Ability extends Enumeration
         'tags' => ['Skill proficiency', 'Byleth', 'Edelgard', 'Dimitri', 'Ignatz', 'Felix', 'Lorenz', 'Sylvain', 'Catherine', 'Yuri', 'Authority']
     ];
 
-	const BATTALION_WRATH_ = [
-        'slug' => 'battalion_wrath_',
-        'name' => "Battalion Wrath ",
+	const BATTALION_WRATH = [
+        'slug' => 'battalion_wrath',
+        'name' => "Battalion Wrath",
         'description' => "If foe initiates combat while unit’s battalion endurance is ≤ 1/3, grants Crit +50.",
         'acquisition' => "Reach skill level C as Hubert, Bernadetta, Caspar, Petra, Dimitri, Dedue, Hilda, Raphael, Seteth, Alois, Gilbert, or A as Annette, Claude in authority",
         'tags' => ['Skill proficiency', 'Dimitri', 'Claude', 'Bernadetta', 'Annette', 'Hilda', 'Caspar', 'Dedue', 'Hubert', 'Petra', 'Raphael', 'Alois', 'Gilbert', 'Seteth', 'Authority']
@@ -1206,9 +1198,9 @@ class Ability extends Enumeration
         'tags' => ['Skill proficiency', 'Authority']
     ];
 
-	const AUTHORITY_PROWESS_LV5_ = [
-        'slug' => 'authority_prowess_lv5_',
-        'name' => "Authority Prowess Lv.5 ",
+	const AUTHORITY_PROWESS_LV5 = [
+        'slug' => 'authority_prowess_lv5',
+        'name' => "Authority Prowess Lv.5",
         'description' => "Grants Mt +10 with gambits.",
         'acquisition' => "Reach skill level A+ in authority",
         'tags' => ['Skill proficiency', 'Authority']

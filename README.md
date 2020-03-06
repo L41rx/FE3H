@@ -24,3 +24,10 @@ https://owwya.com/fire-emblem-three-houses-combat-arts-list-fe3h-guide/
 
 https://owwya.com/fire-emblem-three-houses-spells-wiki-all-fe3h-magic-spell-list/
 // magic
+
+
+// skill profiency exp needed
+
+E -> E+: 40xp
+E+ -> D: 60xp
+D -> D+: 80xp

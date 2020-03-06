@@ -25,6 +25,7 @@ abstract class Enumeration
 
     /**
      * Get an enumerated value. Rudimentary overriding using defaults.
+     * toto make $slug_or_array => if array, assume enum const. use insteaf of get by slug
      * 
      * @param string $slug Name of constant/slug to find
      * @param string|null $property if not null, return this prop

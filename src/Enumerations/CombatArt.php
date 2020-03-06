@@ -27,15 +27,12 @@ class CombatArt extends \L41rx\FE3H\Enumeration
         'effect' => 'Unit makes a solid axe attack with high crit (+3 Mt/Atk, +20 Hit, +20 Crit, 1 Range)'
     ];
 
-
-
     // Lance arts
     const LANCE_SMASH = [
         'slug' => 'lance_smash',
         'name' => 'Smash',
         'effect' => 'Unit makes a powerful lance attack with high crit (+8 Mt/Atk, +10 Hit, +20 Crit, 1 Range)'
     ];
-
 
     // Bow arts
     const CURVED_SHOT = [
@@ -44,6 +41,12 @@ class CombatArt extends \L41rx\FE3H\Enumeration
         'effect' => 'Unit maked an extra long curvy shot. +1 Mt/Atk, +30 Hit, +1 range?'
     ];
 
+    // sword arts
+    const WRATH_STRIKE = [
+        'slug' => 'wrath_strike',
+        'name' => 'Wrath Strike',
+        'effect' => 'Unit makes a devestating sword strike.'
+    ];
 
 
     // Other Combat Arts

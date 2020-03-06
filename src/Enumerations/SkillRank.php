@@ -13,16 +13,23 @@ class SkillRank extends Enumeration
         return $html;
     }
 
-    public static function renderMagicTrack($skill_slug, $rank_slug, $magic)
+    public static function renderRewardTrackLine($skill_slug, $rank_slug, $reward)
     {
         $skill = Skill::get($skill_slug);
         $rank = self::get($rank_slug);
 
         $skill_rank_render = self::render($skill_slug, $rank);
-        $magic_render = Magic::render($magic['slug']);
+
+        if (isset($reward['durability']))    // shitty duck typing
+            $reward_render = Magic::render($reward['slug']);
+        else if (isset($reward['acquisition']))
+            $reward_render = Ability::render($reward['slug']);
+        else {
+            throw new \Exception("Attempted to render reward track for ".print_r($reward, true).", couldnt detect duck type");
+        }
 
         $html = <<<HTML
-            {$skill_rank_render} -> {$magic_render}
+            {$skill_rank_render} -> {$reward_render}
         HTML;
         return $html;
     }
@@ -33,7 +40,7 @@ class SkillRank extends Enumeration
     ];
 
     const EPLUS = [
-        'slug' => 'e+',
+        'slug' => 'e_plus',
         'name' => 'E+'
     ];
 
@@ -43,7 +50,7 @@ class SkillRank extends Enumeration
     ];
 
     const DPLUS = [
-        'slug' => 'd+',
+        'slug' => 'd_plus',
         'name' => 'D+'
     ];
 
@@ -53,7 +60,7 @@ class SkillRank extends Enumeration
     ];
 
     const CPLUS = [
-        'slug' => 'c+',
+        'slug' => 'c_plus',
         'name' => 'C+'
     ];
 
@@ -63,7 +70,7 @@ class SkillRank extends Enumeration
     ];
 
     const BPLUS = [
-        'slug' => 'b+',
+        'slug' => 'b_plus',
         'name' => 'B+'
     ];
 
@@ -73,12 +80,12 @@ class SkillRank extends Enumeration
     ];
 
     const APLUS = [
-        'slug' => 'a',
-        'name' => 'A'
+        'slug' => 'a_plus',
+        'name' => 'A+'
     ];
 
     const S = [
         'slug' => 's',
-        'name' => 'S+'
+        'name' => 'S'
     ];
 }

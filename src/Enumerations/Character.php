@@ -206,4 +206,11 @@ class Character extends \L41rx\FE3H\Enumeration
             ]
         ]
     ];
+
+    const LYSITHEA = [
+        'slug' => 'lysithea',
+        'name' => 'Lysithea',
+        'gender' => 'f',
+        'house' => House::GOLDEN_DEER
+    ];
 }

@@ -82,9 +82,9 @@ class Certification extends \L41rx\FE3H\Enumeration
         ]
     ];
 
-    const SOLIDER = [
+    const SOLDIER = [
         'slug' => 'soldier',
-        'name' => 'Solider',
+        'name' => 'Soldier',
         'tier' => CertificationTier::BEGINNER,
         'movement' => 4,
         'base_stats' => [

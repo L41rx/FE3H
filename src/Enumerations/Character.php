@@ -13,10 +13,71 @@ class Character extends \L41rx\FE3H\Enumeration
                 break;
         }
 
-        return parent::default();
+        return parent::default($property);
     }
 
-    // Waifu squad
+    const BYLETH = [
+        'slug' => "byleth",
+        'name' => "Byleth",
+        'gender' => 'x',
+        'house' => null,
+        'crests' => [
+            Crest::MINOR_CREST_OF_SEIROS
+        ],
+        'starting_certification' => Certification::NOBLE,
+        'budding_talent' => Skill::REASON,
+        'lost_items' => ['Eastern Porcelain', 'White Glove', 'Time-worn Quill Pen'],
+        'unique_ability' => Ability::IMPERIAL_LINEAGE,
+        'base_stats' => [
+            Stat::HIT_POINTS['slug'] => 29, Stat::LUCK['slug']       => 5,
+            Stat::STRENGTH['slug']   => 13, Stat::DEFENSE['slug']    => 6,
+            Stat::MAGIC['slug']      => 6,  Stat::RESISTANCE['slug'] => 4,
+            Stat::DEXTERITY['slug']  => 5,  Stat::CHARM['slug']      => 10,
+            Stat::SPEED['slug']      => 8
+        ],
+        'stat_growth' => [
+            Stat::HIT_POINTS['slug'] => 40, Stat::LUCK['slug']       => 30,
+            Stat::STRENGTH['slug']   => 55, Stat::DEFENSE['slug']    => 35,
+            Stat::MAGIC['slug']      => 45, Stat::RESISTANCE['slug'] => 35,
+            Stat::DEXTERITY['slug']  => 45, Stat::CHARM['slug']      => 60,
+            Stat::SPEED['slug']      => 40
+        ],
+        'max_stats' => [
+            Stat::HIT_POINTS['slug'] => 81, Stat::LUCK['slug']       => 42,
+            Stat::STRENGTH['slug']   => 81, Stat::DEFENSE['slug']    => 61,
+            Stat::MAGIC['slug']      => 72, Stat::RESISTANCE['slug'] => 47,
+            Stat::DEXTERITY['slug']  => 61, Stat::CHARM['slug']      => 85,
+            Stat::SPEED['slug']      => 57
+        ],
+        'initial_proficiency' => [
+            Skill::SWORD['slug']       => SkillRank::EPLUS,
+            Skill::AXE['slug']         => SkillRank::D,
+            Skill::AUTHORITY['slug']   => SkillRank::D,
+            Skill::HEAVY_ARMOR['slug'] => SkillRank::D
+        ],
+        'strong_skills' => [ Skill::SWORD, Skill::AXE, Skill::AUTHORITY, Skill::HEAVY_ARMOR ],
+        'weak_skills'   => [ Skill::BOW, Skill::FAITH ],
+        'initial_abilities' => [
+            Ability::SWORD_PROWESS_LV_1,
+            Ability::AXE_PROWESS_LV2,
+            Ability::AUTHORITY_PROWESS_LV1
+        ],
+        'initial_combat_arts' => [ CombatArt::AXE_SMASH ],
+        'magic_track' => [
+            'faith' => [
+                SkillRank::D['slug']     => Magic::HEAL,
+                SkillRank::DPLUS['slug'] => Magic::NOSFERATU,
+                SkillRank::C['slug']     => Magic::RECOVER,
+                SkillRank::B['slug']     => Magic::SERAPHIM
+            ], 'reason' => [
+                SkillRank::D['slug']     => Magic::FIRE,
+                SkillRank::C['slug']     => Magic::BOLGANONE,
+                SkillRank::B['slug']     => Magic::LUNA,
+                SkillRank::A['slug']     => Magic::HADES
+            ]
+        ]
+    ];
+
     const EDELGARD = [
         'slug' => 'edelgard',
         'name' => 'Edelgard',
@@ -207,10 +268,198 @@ class Character extends \L41rx\FE3H\Enumeration
         ]
     ];
 
+<<<<<<< HEAD
     const LYSITHEA = [
         'slug' => 'lysithea',
         'name' => 'Lysithea',
         'gender' => 'f',
         'house' => House::GOLDEN_DEER
     ];
+=======
+    const HUBERT = [
+        'slug' => "hubert",
+        'name' => "Hubert"
+    ];
+
+    const FERDINAND = [
+        'slug' => "ferdinand",
+        'name' => "Ferdinand"
+    ];
+
+    const LINHARDT = [
+        'slug' => "linhardt",
+        'name' => "Linhardt"
+    ];
+
+    const CASPAR = [
+        'slug' => "caspar",
+        'name' => "Caspar"
+    ];
+
+    const BERNADETTA = [
+        'slug' => "bernadetta",
+        'name' => "Bernadetta"
+    ];
+
+    const DOROTHEA = [
+        'slug' => "dorothea",
+        'name' => "Dorothea"
+    ];
+
+    const PETRA = [
+        'slug' => "petra",
+        'name' => "Petra"
+    ];
+
+    const DEDUE = [
+        'slug' => "dedue",
+        'name' => "Dedue"
+    ];
+
+    const FELIX = [
+        'slug' => "felix",
+        'name' => "Felix"
+    ];
+
+    const ASHE = [
+        'slug' => "ashe",
+        'name' => "Ashe"
+    ];
+
+    const SYLVAIN = [
+        'slug' => "sylvain",
+        'name' => "Sylvain"
+    ];
+
+    const MERCEDES = [
+        'slug' => "mercedes",
+        'name' => "Mercedes"
+    ];
+
+    const ANNETTE = [
+        'slug' => "annette",
+        'name' => "Annette"
+    ];
+
+    const INGRID = [
+        'slug' => "ingrid",
+        'name' => "Ingrid"
+    ];
+
+    const LORENZ = [
+        'slug' => "lorenz",
+        'name' => "Lorenz"
+    ];
+
+    const RAPHAEL = [
+        'slug' => "raphael",
+        'name' => "Raphael"
+    ];
+
+    const IGNATZ = [
+        'slug' => "ignatz",
+        'name' => "Ignatz"
+    ];
+
+    const LYSITHEA = [
+        'slug' => "lysithea",
+        'name' => "Lysithea"
+    ];
+
+    const MARIANNE = [
+        'slug' => "marianne",
+        'name' => "Marianne"
+    ];
+
+    const HILDA = [
+        'slug' => "hilda",
+        'name' => "Hilda"
+    ];
+
+    const LEONIE = [
+        'slug' => "leonie",
+        'name' => "Leonie"
+    ];
+
+    const RHEA = [
+        'slug' => "rhea",
+        'name' => "Rhea"
+    ];
+
+    const SETETH = [
+        'slug' => "seteth",
+        'name' => "Seteth"
+    ];
+
+    const FLAYN = [
+        'slug' => "flayn",
+        'name' => "Flayn"
+    ];
+
+    const HANNEMAN = [
+        'slug' => "hanneman",
+        'name' => "Hanneman"
+    ];
+
+    const MANUELA = [
+        'slug' => "manuela",
+        'name' => "Manuela"
+    ];
+
+    const GILBERT = [
+        'slug' => "gilbert",
+        'name' => "Gilbert"
+    ];
+
+    const ALOIS = [
+        'slug' => "alois",
+        'name' => "Alois"
+    ];
+
+    const CATHERINE = [
+        'slug' => "catherine",
+        'name' => "Catherine"
+    ];
+
+    const SHAMIR = [
+        'slug' => "shamir",
+        'name' => "Shamir"
+    ];
+
+    const CYRIL = [
+        'slug' => "cyril",
+        'name' => "Cyril"
+    ];
+
+    const JERITZA = [
+        'slug' => "jeritza",
+        'name' => "Jeritza"
+    ];
+
+    const ANNA = [
+        'slug' => "anna",
+        'name' => "Anna"
+    ];
+
+    const YURI = [
+        'slug' => "yuri",
+        'name' => "Yuri"
+    ];
+
+    const BALTHUS = [
+        'slug' => "balthus",
+        'name' => "Balthus"
+    ];
+
+    const CONSTANCE = [
+        'slug' => "constance",
+        'name' => "Constance"
+    ];
+
+    const HAPI = [
+        'slug' => "hapi",
+        'name' => "Hapi"
+    ];
+
+>>>>>>> 5ea816ffeb3daf446326832f551d5d2eeab0b217
 }

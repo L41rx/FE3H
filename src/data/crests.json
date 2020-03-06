@@ -1,0 +1,164 @@
+[
+  {
+    "name": "Crest of Flames",
+    "description": "The Crest of the goddess who governs the world.",
+    "bearers": "Byleth, Sothis, Nemesis",
+    "effect": "Occasionally restores HP equal to 30% of damage dealt. Rarely raises Mt and stops counterattacks.",
+    "weapon": "Sword of the Creator"
+  },
+  {
+    "name": "Crest of Seiros",
+    "dragon": "Sky Dragon",
+    "description": "Saint Seiros bore this Crest and passed it down through House Hresvelg.",
+    "bearers": "Edelgard, Rhea, Jeralt",
+    "effect": "Occasionally raises Mt when using combat arts.",
+    "weapon": "Aymr, Sword of Seiros, Seiros Shield"
+  },
+  {
+    "name": "Crest of Blaiddyd",
+    "dragon": "Grim Dragon",
+    "description": "The Faerghus royal family's Crest, inherited from Blaiddyd.",
+    "bearers": "Dimitri",
+    "effect": "Occasionally doubles Atk(Attack) and weapon uses for combat arts.",
+    "weapon": "Areadbhar"
+  },
+  {
+    "name": "Crest of Fraldarius",
+    "dragon": "Shield Dragon",
+    "description": "House Fraldarius's Crest, inherited from Fraldarius.",
+    "bearers": "Felix, Rodrigue",
+    "effect": "Sometimes raises Mt when using a weapon.",
+    "weapon": "Aegis Shield, Sword of Moralta"
+  },
+  {
+    "name": "Crest of Lamine",
+    "dragon": "Aegis Dragon",
+    "description": "A Crest inherited from Lamine.",
+    "bearers": "Mercedes, Jeritza",
+    "effect": "Occasionally conserves uses of recovery magic.",
+    "weapon": "Rafail Gem, Tathlum Bow"
+  },
+  {
+    "name": "Crest of Gautier",
+    "dragon": "Fissure Dragon",
+    "description": "House Gautier's Crest, inherited from Gautier.",
+    "bearers": "Sylvain",
+    "effect": "Occasionally raises Mt when using combat arts.",
+    "weapon": "Lance of Ruin"
+  },
+  {
+    "name": "Crest of Dominic",
+    "dragon": "Crusher Dragon",
+    "description": "House Dominic's Crest, inherited from Dominic.",
+    "bearers": "Annette",
+    "effect": "Occasionally conserves uses of attack magic.",
+    "weapon": "Crusher"
+  },
+  {
+    "name": "Crest of Daphnel",
+    "dragon": "Flame Dragon",
+    "description": "House Daphnel and House Galatea's Crest, inherited from Daphnel.",
+    "bearers": "Ingrid",
+    "effect": "Sometimes raises Mt when using combat arts.",
+    "weapon": "LÃºin"
+  },
+  {
+    "name": "Crest of Riegan",
+    "dragon": "Star Dragon",
+    "description": "A Crest inherited from Riegan.",
+    "bearers": "Claude",
+    "effect": "Sometimes restores HP equal to 30% of damage dealt when using combat arts.",
+    "weapon": "Failnaught, Sword of Begalta"
+  },
+  {
+    "name": "Crest of Gloucester",
+    "dragon": "Craft Dragon",
+    "description": "House Gloucester's Crest, inherited from Gloucester.",
+    "bearers": "Lysithea, Lorenz",
+    "effect": "Occasionally raises Mt during magic attacks.",
+    "weapon": "Thyrsus, Axe of Ukonvasara"
+  },
+  {
+    "name": "Crest of Goneril",
+    "dragon": "Kalpa Dragon",
+    "description": "House Goneril's Crest, inherited from Goneril.",
+    "bearers": "Hilda",
+    "effect": "Sometimes allows combat arts to prevent enemy counterattacks.",
+    "weapon": "Freikugel"
+  },
+  {
+    "name": "Crest of Charon",
+    "dragon": "Lightning Dragon",
+    "description": "House Charon's Crest, inherited from Charon.",
+    "bearers": "Catherine, Lysithea",
+    "effect": "Occasionally raises Mt when using combat arts.",
+    "weapon": "Thunderbrand"
+  },
+  {
+    "name": "Crest of Macuil",
+    "dragon": "Wind Dragon",
+    "description": "Saint Macuil bore this Crest. It is a symbol of magic and mastery of the wind.",
+    "bearers": "The Wind Caller",
+    "effect": "Occasionally raises Mt during magic attacks.",
+    "weapon": "Sword of Begalta"
+  },
+  {
+    "name": "Crest of Cichol",
+    "dragon": "Earth Dragon",
+    "description": "Saint Cichol bore this Crest. It is a symbol of strength and the land.",
+    "bearers": "Seteth, Ferdinand",
+    "effect": "Sometimes let combat arts prevent enemy counterattacks.",
+    "weapon": "Spear of Assal, Ochain Shield"
+  },
+  {
+    "name": "Crest of Indech",
+    "dragon": "Water Dragon",
+    "description": "Saint Indech bore this Crest. It is a symbol of wisdom and water.",
+    "bearers": "The Immovable, Bernadetta, Hanneman",
+    "effect": "Occasionally allows weapon attacks to strike twice.",
+    "weapon": "The Inexhaustible"
+  },
+  {
+    "name": "Crest of Cethleann",
+    "dragon": "Light Dragon",
+    "description": "Saint Cethleann bore this Crest. A symbol of kindness and mastery of light.",
+    "bearers": "Flayn, Linhardt",
+    "effect": "Sometimes raises Mt when using recovery magic.",
+    "weapon": "Caduceus Staff"
+  },
+  {
+    "name": "Crest of Maurice",
+    "dragon": "Storm Dragon",
+    "description": "The Crest of a Hero whose identity was lost to history.",
+    "bearers": "Wandering Beast, Marianne",
+    "effect": "Sometimes raises Mt when using a weapon.",
+    "weapon": "Blutgang"
+  },
+  {
+    "name": "Crest of Timotheos",
+    "dragon": "Dark Dragon",
+    "effect": "Occasionally does not consume a use for recovery magic.",
+    "weapon": "Dark Creator Sword"
+  },
+  {
+    "name": "Crest of Noa",
+    "dragon": "Bloom Dragon",
+    "effect": "Occasionally does not consume a use during magic attacks.",
+    "weapon": "Dark Creator Sword"
+  },
+  {
+    "name": "Crest of Ernest",
+    "dragon": "Thorn Dragon",
+    "effect": "Occasionally stops enemy counterattacks when using a weapon."
+  },
+  {
+    "name": "Crest of Chevalier",
+    "dragon": "Snow Dragon",
+    "effect": "Sometimes restores HP equal to 30% of damage dealt when using Combat Arts."
+  },
+  {
+    "name": "Crest of Aubin",
+    "dragon": "Ice Dragon",
+    "effect": "Occasionally prevents enemy counterattacks when using a weapon."
+  }
+]

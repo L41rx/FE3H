@@ -11,6 +11,7 @@ class Character extends \L41rx\FE3H\Enumeration
         $c = self::get($slug);
 
         // optionals/defaults
+        $gender = Character::get($slug, 'gender', true);// gender
         if (isset($c['house'])) {                       // house
             $house_name = $c['house']['name'];
             $house_slug = $c['house']['slug'];
@@ -21,7 +22,7 @@ class Character extends \L41rx\FE3H\Enumeration
         if (file_exists(__DIR__.'/../../public/img/character/'.$c['slug'].'.png'))
             $img = "/img/character/{$c['slug']}.png";
         else
-            $img = "/img/character/default.png";
+            $img = "/img/character/{$gender}_default.png";
         if (isset($c['crests'])) {                      // crests
             $crests = "<ul>";
             foreach ($c['crests'] as $crest)
@@ -50,7 +51,7 @@ class Character extends \L41rx\FE3H\Enumeration
         } else {
             $combat_arts = "<ul><li>none</li></ul>";
         }
-        $gender = Character::get($slug, 'gender', true);      // gender, cert, talent
+        // cert, talent
         $cert = isset($c['starting_certification']) ? Certification::render($c['starting_certification']['slug']) : 'N/A';
         $talent = isset($c['budding_talent']) ? Skill::render($c['budding_talent']['slug']) : "N/A";
 
@@ -96,7 +97,7 @@ class Character extends \L41rx\FE3H\Enumeration
                 <img src="{$img}" />
                 <p style="text-align: center;"><strong>{$c['name']}</strong></p>
                 <p style='text-align: center;'>{$house_name} | {$gender} | {$cert}</p>
-                <hr />
+                <!--<hr />
                 <p>Crests:</p>
                 {$crests}
                 <hr />
@@ -128,7 +129,7 @@ class Character extends \L41rx\FE3H\Enumeration
                 <p>Initial combat arts:</p>
                 {$combat_arts}
                 <hr />
-                {$tracks}
+                {$tracks}-->
             </div>
         HMTL;
         return $html;
@@ -138,6 +139,9 @@ class Character extends \L41rx\FE3H\Enumeration
         switch ($property) {
             case 'lost_items':
                 return [];
+                break;
+            case 'gender':
+                return 'x';
                 break;
         }
 
@@ -464,167 +468,276 @@ class Character extends \L41rx\FE3H\Enumeration
 
     const FERDINAND = [
         'slug' => "ferdinand",
-        'name' => "Ferdinand"
+        'name' => "Ferdinand",
+        'gender' => 'm',
+        'house' => House::BLACK_EAGLES,
+        'crests' => [
+            Crest::MINOR_CREST_OF_CICHOL
+        ],
+        'starting_certification' => Certification::NOBLE,
+        /*'budding_talent' => Skill::REASON,
+        'lost_items' => ['Eastern Porcelain', 'White Glove', 'Time-worn Quill Pen'],
+        'unique_ability' => Ability::IMPERIAL_LINEAGE,
+        'base_stats' => [
+            Stat::HIT_POINTS['slug'] => 29, Stat::LUCK['slug']       => 5,
+            Stat::STRENGTH['slug']   => 13, Stat::DEFENSE['slug']    => 6,
+            Stat::MAGIC['slug']      => 6,  Stat::RESISTANCE['slug'] => 4,
+            Stat::DEXTERITY['slug']  => 5,  Stat::CHARM['slug']      => 10,
+            Stat::SPEED['slug']      => 8
+        ],
+        'stat_growth' => [
+            Stat::HIT_POINTS['slug'] => 40, Stat::LUCK['slug']       => 30,
+            Stat::STRENGTH['slug']   => 55, Stat::DEFENSE['slug']    => 35,
+            Stat::MAGIC['slug']      => 45, Stat::RESISTANCE['slug'] => 35,
+            Stat::DEXTERITY['slug']  => 45, Stat::CHARM['slug']      => 60,
+            Stat::SPEED['slug']      => 40
+        ],
+        'max_stats' => [
+            Stat::HIT_POINTS['slug'] => 81, Stat::LUCK['slug']       => 42,
+            Stat::STRENGTH['slug']   => 81, Stat::DEFENSE['slug']    => 61,
+            Stat::MAGIC['slug']      => 72, Stat::RESISTANCE['slug'] => 47,
+            Stat::DEXTERITY['slug']  => 61, Stat::CHARM['slug']      => 85,
+            Stat::SPEED['slug']      => 57
+        ],
+        'initial_proficiency' => [
+            Skill::SWORD['slug']       => SkillRank::EPLUS,
+            Skill::AXE['slug']         => SkillRank::D,
+            Skill::AUTHORITY['slug']   => SkillRank::D,
+            Skill::HEAVY_ARMOR['slug'] => SkillRank::D
+        ],
+        'strong_skills' => [ Skill::SWORD, Skill::AXE, Skill::AUTHORITY, Skill::HEAVY_ARMOR ],
+        'weak_skills'   => [ Skill::BOW, Skill::FAITH ],
+        'initial_abilities' => [ 
+            Ability::SWORD_PROWESS_LV_1,
+            Ability::AXE_PROWESS_LV2,
+            Ability::AUTHORITY_PROWESS_LV1
+        ],
+        'initial_combat_arts' => [ CombatArt::AXE_SMASH ],
+        'tracks' => [
+            Skill::FAITH['slug'] => [
+                SkillRank::D['slug']     => Magic::HEAL,
+                SkillRank::DPLUS['slug'] => Magic::NOSFERATU,
+                SkillRank::C['slug']     => Magic::RECOVER,
+                SkillRank::B['slug']     => Magic::SERAPHIM
+            ], 
+            Skill::REASON['slug'] => [
+                SkillRank::D['slug']     => Magic::FIRE,
+                SkillRank::C['slug']     => Magic::BOLGANONE,
+                SkillRank::B['slug']     => Magic::LUNA,
+                SkillRank::A['slug']     => Magic::HADES
+            ]
+        ]*/
     ];
 
     const LINHARDT = [
         'slug' => "linhardt",
-        'name' => "Linhardt"
+        'name' => "Linhardt",
+        'gender' => 'm',
+        'house' => House::BLACK_EAGLES
     ];
 
     const CASPAR = [
         'slug' => "caspar",
-        'name' => "Caspar"
+        'name' => "Caspar",
+        'gender' => 'm',
+        'house' => House::BLACK_EAGLES
     ];
 
     const BERNADETTA = [
         'slug' => "bernadetta",
-        'name' => "Bernadetta"
+        'name' => "Bernadetta",
+        'gender' => 'f',
+        'house' => House::BLACK_EAGLES
     ];
 
     const DOROTHEA = [
         'slug' => "dorothea",
-        'name' => "Dorothea"
+        'name' => "Dorothea",
+        'gender' => 'f',
+        'house' => House::BLACK_EAGLES
     ];
 
     const PETRA = [
         'slug' => "petra",
-        'name' => "Petra"
+        'name' => "Petra",
+        'gender' => 'f',
+        'house' => House::BLACK_EAGLES
     ];
 
     const DEDUE = [
         'slug' => "dedue",
-        'name' => "Dedue"
+        'name' => "Dedue",
+        'gender' => 'm',
+        'house' => House::BLUE_LIONS
     ];
 
     const FELIX = [
         'slug' => "felix",
-        'name' => "Felix"
+        'name' => "Felix",
+        'gender' => 'm',
+        'house' => House::BLUE_LIONS
     ];
 
     const ASHE = [
         'slug' => "ashe",
-        'name' => "Ashe"
+        'name' => "Ashe",
+        'gender' => 'm',
+        'house' => House::BLUE_LIONS
     ];
 
     const SYLVAIN = [
         'slug' => "sylvain",
-        'name' => "Sylvain"
+        'name' => "Sylvain",
+        'gender' => 'm',
+        'house' => House::BLUE_LIONS
     ];
 
     const MERCEDES = [
         'slug' => "mercedes",
-        'name' => "Mercedes"
+        'name' => "Mercedes",
+        'gender' => 'f',
+        'house' => House::BLUE_LIONS
     ];
 
     const ANNETTE = [
         'slug' => "annette",
-        'name' => "Annette"
+        'name' => "Annette",
+        'gender' => 'f',
+        'house' => House::BLUE_LIONS
     ];
 
     const INGRID = [
         'slug' => "ingrid",
-        'name' => "Ingrid"
+        'name' => "Ingrid",
+        'gender' => 'f',
+        'house' => House::BLUE_LIONS
     ];
 
     const LORENZ = [
         'slug' => "lorenz",
-        'name' => "Lorenz"
+        'name' => "Lorenz",
+        'gender' => 'm',
+        'house' => House::GOLDEN_DEER
     ];
 
     const RAPHAEL = [
         'slug' => "raphael",
-        'name' => "Raphael"
+        'name' => "Raphael",
+        'gender' => 'm',
+        'house' => House::GOLDEN_DEER
     ];
 
     const IGNATZ = [
         'slug' => "ignatz",
-        'name' => "Ignatz"
+        'name' => "Ignatz",
+        'gender' => 'm',
+        'house' => House::GOLDEN_DEER
     ];
 
     const LYSITHEA = [
         'slug' => "lysithea",
-        'name' => "Lysithea"
+        'name' => "Lysithea",
+        'gender' => 'f',
+        'house' => House::GOLDEN_DEER
     ];
 
     const MARIANNE = [
         'slug' => "marianne",
-        'name' => "Marianne"
+        'name' => "Marianne",
+        'gender' => 'f',
+        'house' => House::GOLDEN_DEER
     ];
 
     const HILDA = [
         'slug' => "hilda",
-        'name' => "Hilda"
+        'name' => "Hilda",
+        'gender' => 'f',
+        'house' => House::GOLDEN_DEER
     ];
 
     const LEONIE = [
         'slug' => "leonie",
-        'name' => "Leonie"
+        'name' => "Leonie",
+        'gender' => 'f',
+        'house' => House::GOLDEN_DEER
     ];
 
     const RHEA = [
         'slug' => "rhea",
-        'name' => "Rhea"
+        'name' => "Rhea",
+        'gender' => 'f'
     ];
 
     const SETETH = [
         'slug' => "seteth",
-        'name' => "Seteth"
+        'name' => "Seteth",
+        'gender' => 'm'
     ];
 
     const FLAYN = [
         'slug' => "flayn",
-        'name' => "Flayn"
+        'name' => "Flayn",
+        'gender' => 'f'
     ];
 
     const HANNEMAN = [
         'slug' => "hanneman",
-        'name' => "Hanneman"
+        'name' => "Hanneman",
+        'gender' => 'm'
     ];
 
     const MANUELA = [
         'slug' => "manuela",
-        'name' => "Manuela"
+        'name' => "Manuela",
+        'gender' => 'f'
     ];
 
     const GILBERT = [
         'slug' => "gilbert",
-        'name' => "Gilbert"
+        'name' => "Gilbert",
+        'gender' => 'm'
     ];
 
     const ALOIS = [
         'slug' => "alois",
-        'name' => "Alois"
+        'name' => "Alois",
+        'gender' => 'm'
     ];
 
     const CATHERINE = [
         'slug' => "catherine",
-        'name' => "Catherine"
+        'name' => "Catherine",
+        'gender' => 'f'
     ];
 
     const SHAMIR = [
         'slug' => "shamir",
-        'name' => "Shamir"
+        'name' => "Shamir",
+        'gender' => 'f'
     ];
 
     const CYRIL = [
         'slug' => "cyril",
-        'name' => "Cyril"
+        'name' => "Cyril",
+        'gender' => 'm'
     ];
 
     const JERITZA = [
         'slug' => "jeritza",
-        'name' => "Jeritza"
+        'name' => "Jeritza",
+        'gender' => 'm'
     ];
 
     const ANNA = [
         'slug' => "anna",
-        'name' => "Anna"
+        'name' => "Anna",
+        'gender' => 'f'
     ];
 
     const YURI = [
         'slug' => "yuri",
-        'name' => "Yuri"
+        'name' => "Yuri",
+        'gender' => 'f'
     ];
 
     const BALTHUS = [

@@ -21,25 +21,25 @@ foreach (Character::all() as $c)
         }
 
         .character.eagles {
-            border: 5px solid #9e1629;
+            /*border: 5px solid #9e1629;*/
             background: #ebd8ff;
         }
         .character.eagles img { box-shadow: 0 0 0 3px #9e1629; }
 
         .character.lions {
-            border: 5px solid #1a2872;
+            /*border: 5px solid #1a2872;*/
             background: #dddfe2;
         }
         .character.lions img { box-shadow: 0 0 0 3px #1a2872; }
 
         .character.deer {
-            border: 5px solid yellow;
+            /*border: 5px solid yellow;*/
             background: beige;
         }
         .character.deer img { box-shadow: 0 0 0 3px yellow; }
 
         .character.unaffiliated {
-            border: 5px solid #154c2c;
+            /*border: 5px solid #154c2c;*/
             background: #bbd0c4;
         }
         .character.unaffiliated img { box-shadow: 0 0 0 3px #154c2c; }

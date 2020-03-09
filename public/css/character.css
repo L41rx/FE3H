@@ -5,7 +5,7 @@
   padding: 20px;
   display: flex;
   font-size: 16px;
-  width: 480px; }
+  width: 500px; }
   .character * {
     vertical-align: top; }
   .character info_block {
@@ -26,57 +26,59 @@
     cursor: help;
     text-decoration: underline; }
 
-/*
-.characters {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.character {
-    width: 310px;
-    padding: 20px;
-    margin: 10px;
-}
-
-.character.eagles {
-    /*border: 5px solid #9e1629;
-    background: #ebd8ff;
-}
-.character.eagles img { box-shadow: 0 0 0 3px #9e1629; }
-
-.character.lions {
-    /*border: 5px solid #1a2872;
-    background: #dddfe2;
-}
-.character.lions img { box-shadow: 0 0 0 3px #1a2872; }
-
-.character.deer {
-    /*border: 5px solid yellow;
-    background: beige;
-}
-.character.deer img { box-shadow: 0 0 0 3px yellow; }
-
-.character.unaffiliated {
-    /*border: 5px solid #154c2c;
-    background: #bbd0c4;
-}
-.character.unaffiliated img { box-shadow: 0 0 0 3px #154c2c; }
-
-.character img {
-    width: 100%;
-    height: auto;
-    margin-bottom: 1rem;
-}
-
-[title] {
-    cursor: help;
-    text-decoration: underline;
-}
-
-p {
-    margin: 0;
-}
-
-ul, ol {
-    margin: 0;
+/*
+.characters {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.character {
+    width: 310px;
+    padding: 20px;
+    margin: 10px;
+}
+
+.character.eagles {
+    /*border: 5px solid #9e1629;
+    background: #ebd8ff;
+}
+.character.eagles img { box-shadow: 0 0 0 3px #9e1629; }
+
+.character.lions {
+    /*border: 5px solid #1a2872;
+    background: #dddfe2;
+}
+.character.lions img { box-shadow: 0 0 0 3px #1a2872; }
+
+.character.deer {
+    /*border: 5px solid yellow;
+    background: beige;
+}
+.character.deer img { box-shadow: 0 0 0 3px yellow; }
+
+.character.unaffiliated {
+    /*border: 5px solid #154c2c;
+    background: #bbd0c4;
+}
+.character.unaffiliated img { box-shadow: 0 0 0 3px #154c2c; }
+
+.character img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+[title] {
+    cursor: help;
+    text-decoration: underline;
+}
+
+p {
+    margin: 0;
+}
+
+ul, ol {
+    margin: 0;
 }*/
+
+/*# sourceMappingURL=character.css.map */

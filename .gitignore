@@ -2,3 +2,5 @@
 composer.lock
 vendor/
 public/img
+src/data/page_rips_wiki.html
+.sass-cache/

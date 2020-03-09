@@ -1,14 +1,9 @@
 <?php
 require_once __DIR__.'/../vendor/autoload.php';
-use \L41rx\FE3H\Enumerations\Crest;
-use \L41rx\FE3H\Enumerations\Stat;
-use \L41rx\FE3H\Enumerations\Ability;
-use \L41rx\FE3H\Enumerations\CombatArt;
-use \L41rx\FE3H\Enumerations\SkillRank;
-use \L41rx\FE3H\Enumerations\Skill;
+use \L41rx\FE3H\Enumerations\Character;
 
-$characters = \L41rx\FE3H\Enumerations\Character::all();
-
-var_dump($characters);
-
+foreach (Character::all() as $c) {
+    echo "<pre>".htmlspecialchars(file_get_contents("https://fireemblemwiki.org/wiki/" . $c['name']))."</pre>";
+    echo "<hr>ZZMARKER-{$c['name']}<hr>XYZ-MARKER-{$c['name']}<hr>";
+}
 ?>

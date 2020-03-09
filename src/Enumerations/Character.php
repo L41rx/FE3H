@@ -281,7 +281,8 @@ class Character extends \L41rx\FE3H\Enumeration
                 SkillRank::B['slug']     => Magic::LUNA,
                 SkillRank::A['slug']     => Magic::HADES
             ]
-        ]
+        ],
+        'description' => 'Edelgard was born the ninth child of Emperor Ionius IX of the Adrestian Empire. In Imperial Year 1171, Edelgard was taken to Faerghus by her uncle, Lord Arundel, and she quickly befriended her maternal stepbrother Dimitri. When she returned to the Empire in 1174, he gave her a dagger as a parting gift. At some point in her childhood, she and all ten of her siblings were imprisoned by a conspiracy of nobles including Arundel, Duke Aegir, and Lord von Vestra, with Ionius IX helpless to stop them. The siblings were subjected to horrific experimentation in order to implant them with the Crest of Flames, and ultimately Edelgard was the sole survivor and successful test subject. Developing a hatred of the Crest system that had dominated Fódlan for a millennium, Edelgard swore to destroy the Crests and the Church of Seiros which upheld their power by any means necessary and unite Fódlan under the Adrestian banner to create world peace.'
     ];
 
 
@@ -344,7 +345,8 @@ class Character extends \L41rx\FE3H\Enumeration
                 SkillRank::D['slug']     => Magic::THUNDER,
                 SkillRank::C['slug']     => Magic::THORON
             ]
-        ]
+        ],
+        'description' => 'Dimitri is the crown prince of the Holy Kingdom of Faerghus. In Imperial Year 1171, Dimitri\'s maternal stepsister Princess Edelgard of the Adrestian Empire came to Faerghus with her uncle, Lord Arundel, and the two became fast friends. When she returned to the Empire in 1174, he gave her a dagger as a parting gift. In 1176, he was the sole survivor of the Tragedy of Duscur, in which his father King Lambert and many of his knights and friends were murdered, allegedly by assassins from the Duscur region. This incident permanently warped the young prince, leaving him with a deep-seated grudge against the perpetrators and a hidden capacity for extreme violence, although he always suspected that the people of Duscur had been scapegoated. In the aftermath of the Tragedy, he saved a young Duscur commoner named Dedue from being lynched, leading him to develop an extremely strong sense of loyalty towards Dimitri.'
     ];
 
 
@@ -411,7 +413,8 @@ class Character extends \L41rx\FE3H\Enumeration
                 SkillRank::B['slug']     => Magic::CUTTING_GALE,
                 SkillRank::A['slug']     => Magic::EXCALIBUR
             ]
-        ]
+        ],
+        'description' => 'Claude was born the son of the king of Almyra and a noble from Leicester. As a child, he often found himself discriminated against due to his Fódlan heritage. When he left Almyra for Leicester, he was again discriminated against due to his Almyran heritage. This led him to develop a desire to end Fódlan\'s long-standing isolationism in an effort to bring about a new world where everyone accepts everyone else. He was named heir to House Riegen in Imperial Year 1179 and enrolled at the Officers Academy at Garreg Mach Monastery the following year along with several people from his kingdom. During a training exercise with Princess Edelgard von Hresvelg of Adrestia and Prince Dimitri Alexandre Blaiddyd of Faerghus, he was attacked by bandits hired by an individual calling themselves the Flame Emperor, but was rescued by the mercenaries Byleth and Jeralt. Byleth was offered a teaching position at the Academy as a reward, and their choice of which house to lead would have far-reaching consequences for all of Fódlan.'
     ];
 
     
@@ -478,6 +481,7 @@ class Character extends \L41rx\FE3H\Enumeration
                 SkillRank::S['slug']     => Ability::RALLY_SPEED
             ]
         ],
+        'description' => 'Hubert is the eldest son of Marquess Vestra and has served Edelgard since his youth.'
     ];
 
     const FERDINAND = [
@@ -549,91 +553,103 @@ class Character extends \L41rx\FE3H\Enumeration
             SkillRank::BPLUS['slug'] => [Stat::DEXTERITY['slug'] => 2,  Skill::HEAVY_ARMOR['slug'] => SkillRank::EPLUS],
             SkillRank::A['slug']     => []
         ],
-        'description' => "Ferdinand is the eldest son and heir of House Aegir, which has held the office of prime minister of the Adrestian Empire for centuries. When he was 9 years old, his father, Ludwig, seized power in the Insurrection of the Seven, rendering Emperor Ionius IX politically impotent. He is very proud of his family's status as high-class nobility, but clashes with his father about what nobility actually is and means."
+        'description' => 'Ferdinand is the eldest son of the Aegir Dukedom, the family that passes down the position of prime minister for the Adrestia Empire. Ferdinand\'s father, Duke Aegir, striped the power of Emperor, basically making him a puppet politician. Because of this Ferdinand tried to become the opposite of his father, by becoming the pinnacle of nobility, and to stand up for the commoners. He enrolls in the Officers Academy at the Garreg Mach Monastery, joining the Black Eagles.'
     ];
 
     const LINHARDT = [
         'slug' => "linhardt",
         'name' => "Linhardt",
         'gender' => 'm',
-        'affiliation' => Affiliation::BLACK_EAGLES
+        'affiliation' => Affiliation::BLACK_EAGLES,
+        'description' => 'Linhardt is the son of the Earl of Hevring.'
     ];
 
     const CASPAR = [
         'slug' => "caspar",
         'name' => "Caspar",
         'gender' => 'm',
-        'affiliation' => Affiliation::BLACK_EAGLES
+        'affiliation' => Affiliation::BLACK_EAGLES,
+        'description' => 'Caspar is the second son of Count Bergliez. Since he is not inheriting his father\'s title, he has decided to make a name for himself at the Officers Academy.'
     ];
 
     const BERNADETTA = [
         'slug' => "bernadetta",
         'name' => "Bernadetta",
         'gender' => 'f',
-        'affiliation' => Affiliation::BLACK_EAGLES
+        'affiliation' => Affiliation::BLACK_EAGLES,
+        'description' => 'Bernadetta is the only daughter of the Varley Dukedom. Her greedy father only ever saw her as "bait for a rich husband". To "train [her] to be a good wife", he tied her to a chair for hours and taught her to be submissive and obedient. He also told her not to go near commoners, much less befriend them. However, Bernadetta ignored this advice and befriended a young commoner boy. When her father found out, the boy was found beaten half to death. Years later, Bernadetta\'s mother had a servant stuff Bernadetta into a sack and shipped her to the Officers Academy, already having developed social anxiety and locking herself in her room when not attending class or eating meals.'
     ];
 
     const DOROTHEA = [
         'slug' => "dorothea",
         'name' => "Dorothea",
         'gender' => 'f',
-        'affiliation' => Affiliation::BLACK_EAGLES
+        'affiliation' => Affiliation::BLACK_EAGLES,
+        'description' => 'Dorothea was born as a commoner in the Adrestian Empire. Both her parents died when she was a child, leaving her an orphan to beg in the streets. She would sometimes sing alone. '
     ];
 
     const PETRA = [
         'slug' => "petra",
         'name' => "Petra",
         'gender' => 'f',
-        'affiliation' => Affiliation::BLACK_EAGLES
+        'affiliation' => Affiliation::BLACK_EAGLES,
+        'description' => 'Petra is a native of Brigid, a kingdom situated on a group of islands off the coast of the Adrestian Empire. As Brigid is subservient to Adrestia, Petra serves as its representative at the Officers Academy.'
     ];
 
     const DEDUE = [
         'slug' => "dedue",
         'name' => "Dedue",
         'gender' => 'm',
-        'affiliation' => Affiliation::BLUE_LIONS
+        'affiliation' => Affiliation::BLUE_LIONS,
+        'description' => 'Dedue was born an ordinary commoner from the nation of Duscur. After the Tragedy of Duscur, where King Lambert of Faerghus was assassinated during peace talks with Duscur, Kingdom forces invaded and genocided Duscur in retribution for his death. Dedue was personally rescued from lynching by Lambert\'s son Dimitri, became one of the few survivors of the massacre, and developed an intense personal loyalty to the young prince. In 1180, Dedue and Dimitri enrolled in the Officer\'s Academy at Garreg Mach Monastery and became members of the Blue Lions house. Throughout 1180, he studies and fights alongside the Blue Lions. When Edelgard declares war on the Church of Seiros, he fights on the Church\'s side, but is defeated. Afterwards, he and Dimitri return to Faerghus.'
     ];
 
     const FELIX = [
         'slug' => "felix",
         'name' => "Felix",
         'gender' => 'm',
-        'affiliation' => Affiliation::BLUE_LIONS
+        'affiliation' => Affiliation::BLUE_LIONS,
+        'description' => 'Felix is the eldest surviving son of the house of Duke Fraldarius, and is Dimitri\'s childhood friend. Felix had an older brother named Glenn, who died in battle while protecting Dimitri during the Tragedy of Duscur. Felix interpreted his father\'s remark that Glenn "died like a true knight" regarding the honor in his brother\'s death as detached, so he developed a resentment towards his father and nobility in general, and became disillusioned with concept of chivalry.'
     ];
 
     const ASHE = [
         'slug' => "ashe",
         'name' => "Ashe",
         'gender' => 'm',
-        'affiliation' => Affiliation::BLUE_LIONS
+        'affiliation' => Affiliation::BLUE_LIONS,
+        'description' => 'Ashe is the adoptive son of Lord Lonato of Gaspard. Lonato does not inform him of his plans to rebel against the Church of Seiros.'
     ];
 
     const SYLVAIN = [
         'slug' => "sylvain",
         'name' => "Sylvain",
         'gender' => 'm',
-        'affiliation' => Affiliation::BLUE_LIONS
+        'affiliation' => Affiliation::BLUE_LIONS,
+        'description' => 'Sylvain is a son of the house of Margrave Gautier. He has an elder brother who was disinherited due to not having a crest.'
     ];
 
     const MERCEDES = [
         'slug' => "mercedes",
         'name' => "Mercedes",
         'gender' => 'f',
-        'affiliation' => Affiliation::BLUE_LIONS
+        'affiliation' => Affiliation::BLUE_LIONS,
+        'description' => 'Mercedes is a former member of a noble family who grew up as a commoner in Faerghus. She was once enrolled in the Mage School of the kingdom\'s capital.'
     ];
 
     const ANNETTE = [
         'slug' => "annette",
         'name' => "Annette",
         'gender' => 'f',
-        'affiliation' => Affiliation::BLUE_LIONS
+        'affiliation' => Affiliation::BLUE_LIONS,
+        'description' => 'Annette is the niece of Baron Dominic and a graduate of the Mage Academy in Faerghus. She is good friends with Mercedes, and refers to her as "Mercie" while Mercedes calls her "Annie".'
     ];
 
     const INGRID = [
         'slug' => "ingrid",
         'name' => "Ingrid",
         'gender' => 'f',
-        'affiliation' => Affiliation::BLUE_LIONS
+        'affiliation' => Affiliation::BLUE_LIONS,
+        'description' => 'Ingrid is the daughter of Count Galatea and a childhood friend of Dimitri, Felix, and Sylvain. She was previously betrothed to Glenn, Felix\'s elder brother, but Glenn died in the Tragedy of Duscur.'
     ];
 
     const LORENZ = [
@@ -647,116 +663,133 @@ class Character extends \L41rx\FE3H\Enumeration
         'slug' => "raphael",
         'name' => "Raphael",
         'gender' => 'm',
-        'affiliation' => Affiliation::GOLDEN_DEER
+        'affiliation' => Affiliation::GOLDEN_DEER,
+        'description' => 'Raphael is the son of a family of merchants. His parents passed away in an unfortunate accident.'
     ];
 
     const IGNATZ = [
         'slug' => "ignatz",
         'name' => "Ignatz",
         'gender' => 'm',
-        'affiliation' => Affiliation::GOLDEN_DEER
+        'affiliation' => Affiliation::GOLDEN_DEER,
+        'description' => 'Ignatz is the second son of a merchant family in Leicester. Since his brother is inheriting the family business, he has decided to attend the Officers Academy and become a knight, with his parents\' blessing.'
     ];
 
     const LYSITHEA = [
         'slug' => "lysithea",
         'name' => "Lysithea",
         'gender' => 'f',
-        'affiliation' => Affiliation::GOLDEN_DEER
+        'affiliation' => Affiliation::GOLDEN_DEER,
+        'description' => 'Lysithea is the eldest daughter of the house of Count Ordelia and a prodigy in magic. As a punishment to her house for having part in a revolution against the Empire, those who slither in the dark were sent by the Empire to experiment on a young Lysithea and other children from her house. The goal of this experiment was to implant two Crests into a single person. She was the only survivor and success of the experiment, which resulted in her having white hair and a drastically shortened lifespan. To bring peace to her parents, she rushed her studies to enter the Officers Academy early, and graduate to save her house. According to herself, she was given 5 years, maximum, to live.'
     ];
 
     const MARIANNE = [
         'slug' => "marianne",
         'name' => "Marianne",
         'gender' => 'f',
-        'affiliation' => Affiliation::GOLDEN_DEER
+        'affiliation' => Affiliation::GOLDEN_DEER,
+        'description' => 'Marianne was born in a family descended from Maurice, who bore a cursed Crest. Her father told her to stay away from people as she had a curse that would turn her into a beast at night, and that her Crest brought misfortune to everyone she interacted with. As such, Marianne chose to stay away from people and preferred to talk to animals, particularly birds and horses. Sometime later in her life, she was adopted by Margrave Edmund, a Lord  of the Alliance, who raised her as his daughter. She then enrolled at the Officers Academy at Garreg Mach and her adoptive father forbid her from leaving the monastery for too long so as too protect her while he looked for a rich noble to marry her.'
     ];
 
     const HILDA = [
         'slug' => "hilda",
         'name' => "Hilda",
         'gender' => 'f',
-        'affiliation' => Affiliation::GOLDEN_DEER
+        'affiliation' => Affiliation::GOLDEN_DEER,
+        'description' => 'Hilda is the daughter of Duke Goneril.  She has an older brother, Holst, who is known to be a great warrior.  Hilda is quite lazy, asking to not be put into battle or passing her chores off to others.  Despite this, she is a gifted artisan, making all sorts of fashionable accessories.  She can acquire the relic of House Goneril, the axe Freikugel.'
     ];
 
     const LEONIE = [
         'slug' => "leonie",
         'name' => "Leonie",
         'gender' => 'f',
-        'affiliation' => Affiliation::GOLDEN_DEER
+        'affiliation' => Affiliation::GOLDEN_DEER,
+        'description' => 'Leonie is a hunter\'s daughter from the village of Sauin within the Leicester Alliance. When she was a child, her village hired mercenaries to defend themselves. This was Jeralt\'s mercenary group. Leonie saw Jeralt as someone that defended those who couldn\'t defend themselves, and asked him to be his apprentice. He taught her a few things before leaving the village, with the promise that they would reunite. To become a mercenary and be like Jeralt, she borrowed money from her village and enrolled in the Officers Academy.'
     ];
 
     const RHEA = [
         'slug' => "rhea",
         'name' => "Rhea",
         'gender' => 'f',
-        'affiliation' => Affiliation::CHURCH_OF_SEIROS
+        'affiliation' => Affiliation::CHURCH_OF_SEIROS,
+        'description' => 'Rhea was born as the child of Sothis from her blood, among others, and together they lived at Zanado. The King of Liberation, Nemesis, who had stolen her mother\'s remains and made the Sword of the Creator with them, invaded Zanado with his army and killed all of the goddess\' children, save Rhea. Thirsty for revenge, she took up the name Seiros, gathered soldiers from Fódlan, and led an attack against Nemesis and the 10 Elites. During her conflict with Nemesis, she helped Wilhelm Paul Hresvelg found the Adrestian Empire. At the Tailtean Plains, she killed Nemesis. Afterwards, she founded the Church of Seiros. Her draconic form ultimately came to be known as a legendary figure called the Immaculate One. Over the course of the next millennium, Seiros attempted to create a vessel capable of hosting Sothis\' consciousness so she could resurrect her by planting Sothis\' Crest Stone within their bodies, but all of her efforts ended in failure. By the Imperial Year 1159, she had become the Archbishop of the Church of Seiros under the name Rhea. Her twelfth failed vessel fell in love with the captain of the Knights of Seiros, Jeralt, and had a child named Byleth. However, the child was stillborn, and Rhea transferred Sothis\' Crest Stone to Byleth and saved them at the cost of the mother. Byleth was unnaturally silent and had no heartbeat, leading the terrified Jeralt to fake the child\'s death and flee Garreg Mach Monastery.'
     ];
 
     const SETETH = [
         'slug' => "seteth",
         'name' => "Seteth",
         'gender' => 'm',
-        'affiliation' => Affiliation::CHURCH_OF_SEIROS
+        'affiliation' => Affiliation::CHURCH_OF_SEIROS,
+        'description' => 'Seteth, born Cichol, was one of the Children of the Goddess that lived in Zanado. After surviving the massacre perpetuated by Nemesis and those who slither in the dark, he, along with his daughter Cethleann, joined forces with Seiros as one of the legendary four saints. Cethleann was badly injured in the battle with Nemesis and fell into a coma for several centuries, so Cichol went into hiding in order to protect her. Eventually, in the 1100s, he came to Garreg Mach Monastery and became an administrator for the Church of Seiros under the alias Seteth, eventually becoming the Church\'s second-in-command under Seiros, now going by the name Rhea. In 1179, Cethleann woke from her coma and took up residence at the monastery under the alias Flayn.'
     ];
 
     const FLAYN = [
         'slug' => "flayn",
         'name' => "Flayn",
         'gender' => 'f',
-        'affiliation' => Affiliation::CHURCH_OF_SEIROS
+        'affiliation' => Affiliation::CHURCH_OF_SEIROS,
+        'description' => 'Flayn, born Cethleann, was one of the Nabateans living in Zanado alongside her father Cichol and the goddess Sothis. When the human bandit Nemesis massacred the Nabateans to create the Heroes\' Relics, Cethleann took up arms against him and fought him in battle. Cethleann was grievously injured fighting Nemesis, and spent the next several centuries in a coma. She awoke in 1179, by which point Cichol had become a high-ranking administrator for the Church of Seiros under the alias Seteth. Cethleann took the alias Flayn and took up residence at Garreg Mach Monastery, pretending to be Seteth\'s younger sister.'
     ];
 
     const HANNEMAN = [
         'slug' => "hanneman",
         'name' => "Hanneman",
-        'gender' => 'm'
+        'gender' => 'm',
+        'description' => 'Hanneman became an authority on Crestology in the empire, although he resigned after his sister died. A year later, he became a professor at the Officers Academy, where he continues his Crest research.'
     ];
 
     const MANUELA = [
         'slug' => "manuela",
         'name' => "Manuela",
-        'gender' => 'f'
+        'gender' => 'f',
+        'description' => 'Before working at the Monastery, Manuela was a member of the Mittlefrank Opera Company. She came to be known as the "Divine Songstress" in the imperial capital. During this time, she met and inspired Dorothea She eventually left the Opera and became a professor and doctor at the Officers Academy.'
     ];
 
     const GILBERT = [
         'slug' => "gilbert",
         'name' => "Gilbert",
         'gender' => 'm',
-        'affiliation' => Affiliation::CHURCH_OF_SEIROS
+        'affiliation' => Affiliation::CHURCH_OF_SEIROS,
+        'description' => 'Gilbert was born Gustave Eddie Dominic, brother of Baron Dominic of the Holy Kingdom of Faerghus. He was originally a common soldier before being personally knighted by King Lambert and assigned to act as a combat instructor for both him and his son Dimitri. When the Tragedy of Duscur occurred, he personally saved Dimitri\'s life, but was far too late to save Lambert. Descending into self-loathing as a result of his failure, Gustave abandoned his wife and daughter Annette to travel to Garreg Mach Monastery, where he joined the Knights of Seiros under the name Gilbert.'
     ];
 
     const ALOIS = [
         'slug' => "alois",
         'name' => "Alois",
         'gender' => 'm',
-        'affiliation' => Affiliation::CHURCH_OF_SEIROS
+        'affiliation' => Affiliation::CHURCH_OF_SEIROS,
+        'description' => 'Alois is a member of the Knights of Seiros. He recommends Byleth become a teacher at the Officers Academy after they save some students from a bandit attack.'
     ];
 
     const CATHERINE = [
         'slug' => "catherine",
         'name' => "Catherine",
         'gender' => 'f',
-        'affiliation' => Affiliation::CHURCH_OF_SEIROS
+        'affiliation' => Affiliation::CHURCH_OF_SEIROS,
+        'description' => 'Catherine is an alumnus of the Officers Academy and a Knight of Seiros. She wields the divine sword Thunderbrand.'
     ];
 
     const SHAMIR = [
         'slug' => "shamir",
         'name' => "Shamir",
-        'gender' => 'f'
+        'gender' => 'f',
+        'description' => 'Shamir is a master archer and former mercenary who joined the Knights of Seiros to repay a debt to Archbishop Rhea.'
     ];
 
     const CYRIL = [
         'slug' => "cyril",
         'name' => "Cyril",
         'gender' => 'm',
-        'affiliation' => Affiliation::CHURCH_OF_SEIROS
+        'affiliation' => Affiliation::CHURCH_OF_SEIROS,
+        'description' => 'Cyril is a war orphan in service to Archbishop Rhea, and one of few people that have a close relationship with her. He has been taking archery lessons from Shamir. He is still bitter towards the King of Almyra for ignoring his plight as a child. He unofficially joins Byleth\'s class, as he is too young to officially be a student, after they halt the raid on the Cathedral. He joins with the intention of helping Byleth protect Rhea. '
     ];
 
     const JERITZA = [
         'slug' => "jeritza",
         'name' => "Jeritza",
         'gender' => 'm',
-        'affiliation' => Affiliation::ADRESTIA
+        'affiliation' => Affiliation::ADRESTIA,
+        'description' => 'Jeritza was born Emile von Bartels, heir to House Bartels of Adrestia. His mother was a commoner who married his father for financial security for her daughter Mercedes, but his father was only interested in her Crest and banished the two as soon as Emile was born. When Emile was eight years old, his mother and sister absconded to Faerghus; Emile remained behind, fearing that his father would hunt them down and kill both of them if they fled with his true-born heir. Eventually, Emile\'s father tracked the two down and decided that since Emile\'s mother was past the age of bearing children, he would marry Mercedes to have more children with the Crest of Lamine. Emile snapped and massacred House Bartels, and because of this incident developed a homicidal split personality known as the Death Knight. In the aftermath, Princess Edelgard von Hresvelg discovered him, arranged for him to be adopted into the Hrym family under the name Jeritza, and took him into her service in order to make use of his skills for her plans to overthrow the Church of Seiros. Eventually, with the recommendation of Lord Arundel, Jeritza took a post as a fencing instructor at the Officers Academy at Garreg Mach Monastery.'
     ];
 
     const ANNA = [
@@ -768,17 +801,20 @@ class Character extends \L41rx\FE3H\Enumeration
     const YURI = [
         'slug' => "yuri",
         'name' => "Yuri",
-        'gender' => 'f'
+        'gender' => 'f',
+        'description' => 'Yuri was once a student of the Officer\'s Academy, but was expelled from the school under unknown circumstances and moved to Abyss.'
     ];
 
     const BALTHUS = [
         'slug' => "balthus",
-        'name' => "Balthus"
+        'name' => "Balthus",
+        'description' => 'Balthus was once a noble of the Leicester Alliance, until unknown circumstances led to him becoming a fugitive.'
     ];
 
     const CONSTANCE = [
         'slug' => "constance",
-        'name' => "Constance"
+        'name' => "Constance",
+        'description' => 'Constance is a survivor of House Nuvelle of the Adrestian Empire.'
     ];
 
     const HAPI = [

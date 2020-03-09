@@ -6,19 +6,23 @@ namespace L41rx\FE3H\Enumerations;
 
 class Character extends \L41rx\FE3H\Enumeration
 {
+    // just JSON it and inject that lol
+    private static function injectSelf($enum)
+    {
+        return "id=\"{$enum['slug']}\" data-character=\"".htmlentities(json_encode($enum), ENT_QUOTES, 'UTF-8')."\"";
+    }
+
     public static function render($slug)
     {
         $c = self::get($slug);
 
         // optionals/defaults
         $gender = Character::get($slug, 'gender', true);// gender
-        if (isset($c['house'])) {                       // house
-            $house_name = $c['house']['name'];
-            $house_slug = $c['house']['slug'];
-        } else {
-            $house_name = House::default('name');
-            $house_slug = House::default('slug');
-        }                                               // image
+        if (isset($c['affiliation']))                   // affiliation
+            $affiliation = Affiliation::render($c['affiliation']['slug']);
+        else
+            $affiliation = "<span title=\"This character appears to be unaffiliated\">Unaffiliated</span>";
+                                                        // image
         if (file_exists(__DIR__.'/../../public/img/character/'.$c['slug'].'.png'))
             $img = "/img/character/{$c['slug']}.png";
         else
@@ -54,6 +58,7 @@ class Character extends \L41rx\FE3H\Enumeration
         // cert, talent
         $cert = isset($c['starting_certification']) ? Certification::render($c['starting_certification']['slug']) : 'N/A';
         $talent = isset($c['budding_talent']) ? Skill::render($c['budding_talent']['slug']) : "N/A";
+        $description = isset($c['description']) ? $c['description'] : "This character prefers to keep an air of mystery about them.";
 
 
         // tracks
@@ -92,11 +97,19 @@ class Character extends \L41rx\FE3H\Enumeration
         else
             $weak_skills = "<li>none</li>";
 
+        $inject_self = self::injectSelf($c);
         $html = <<<HMTL
-            <div class="character {$house_slug}">
-                <img src="{$img}" />
-                <p style="text-align: center;"><strong>{$c['name']}</strong></p>
-                <p style='text-align: center;'>{$house_name} | {$gender} | {$cert}</p>
+            <character class="character" $inject_self>
+                <info_block>
+                    <img src="{$img}" />
+                    <name>{$c['name']}</name><br />
+                    <span style="position: absolute; top: 14px; right: 0;">
+                        <affiliation>{$affiliation}</affiliation> |
+                        <gender>{$gender}</gender> |
+                        <certification>{$cert}</certification>
+                    </span>
+                    <description>{$description}</description>
+                </info_block>
                 <!--<hr />
                 <p>Crests:</p>
                 {$crests}
@@ -130,7 +143,7 @@ class Character extends \L41rx\FE3H\Enumeration
                 {$combat_arts}
                 <hr />
                 {$tracks}-->
-            </div>
+            </character>
         HMTL;
         return $html;
     }
@@ -152,7 +165,6 @@ class Character extends \L41rx\FE3H\Enumeration
         'slug' => "byleth",
         'name' => "Byleth",
         'gender' => 'x',
-        'house' => null,
         'crests' => [
             Crest::MAJOR_CREST_OF_FLAMES
         ],
@@ -205,14 +217,15 @@ class Character extends \L41rx\FE3H\Enumeration
                 SkillRank::C['slug']     => Magic::BOLGANONE,
                 SkillRank::A['slug']     => Magic::RAGNAROK
             ]
-        ]
+        ],
+        'description' => "Born to Jeralt and Sitri on the 20th of the Horsebow Moon 1159, Byleth lost their mother shortly after their birth. She was buried at Garreg Mach Monastery. Some time after her death, Jeralt left the Knights of Seiros, taking his newborn child with him to travel Fódlan, becoming a mercenary in the process and starting his own mercenary company."
     ];
 
     const EDELGARD = [
         'slug' => 'edelgard',
         'name' => 'Edelgard',
         'gender' => 'f',
-        'house' => House::BLACK_EAGLES,
+        'affiliation' => Affiliation::BLACK_EAGLES,
         'crests' => [
             Crest::MINOR_CREST_OF_SEIROS
         ],
@@ -277,7 +290,7 @@ class Character extends \L41rx\FE3H\Enumeration
         'slug' => 'dimitri',
         'name' => 'Dimitri',
         'gender' => 'm',
-        'house' => House::BLUE_LIONS,
+        'affiliation' => Affiliation::BLUE_LIONS,
         'crests' => [
             Crest::MINOR_CREST_OF_BLAIDDYD
         ],
@@ -319,7 +332,7 @@ class Character extends \L41rx\FE3H\Enumeration
             Ability::LANCE_PROWESS_LV2,
             Ability::AUTHORITY_PROWESS_LV1
         ],
-        'initial_combat_arts' => [ CombatArt::LANCE_SMASH ],
+        'initial_combat_arts' => [ CombatArt::TEMPEST_LANCE ],
         'tracks' => [
             Skill::FAITH['slug'] => [
                 SkillRank::D['slug']     => Magic::HEAL,
@@ -341,7 +354,7 @@ class Character extends \L41rx\FE3H\Enumeration
         'slug' => 'claude',
         'name' => 'Claude',
         'gender' => 'm',
-        'house' => House::GOLDEN_DEER,
+        'affiliation' => Affiliation::GOLDEN_DEER,
         'crests' => [
             Crest::MINOR_CREST_OF_RIEGAN
         ],
@@ -401,11 +414,12 @@ class Character extends \L41rx\FE3H\Enumeration
         ]
     ];
 
+    
     const HUBERT = [
         'slug' => "hubert",
         'name' => "Hubert",
         'gender' => 'm',
-        'house' => House::BLACK_EAGLES,
+        'affiliation' => Affiliation::BLACK_EAGLES,
         'starting_certification' => Certification::NOBLE,
         'budding_talent' => Skill::LANCE,
         'lost_items' => ["Hresvelg Treatise", "Noxious Handkerchief", "Folding Razor"],
@@ -470,214 +484,226 @@ class Character extends \L41rx\FE3H\Enumeration
         'slug' => "ferdinand",
         'name' => "Ferdinand",
         'gender' => 'm',
-        'house' => House::BLACK_EAGLES,
+        'affiliation' => Affiliation::BLACK_EAGLES,
         'crests' => [
             Crest::MINOR_CREST_OF_CICHOL
         ],
         'starting_certification' => Certification::NOBLE,
-        /*'budding_talent' => Skill::REASON,
-        'lost_items' => ['Eastern Porcelain', 'White Glove', 'Time-worn Quill Pen'],
-        'unique_ability' => Ability::IMPERIAL_LINEAGE,
+        'budding_talent' => Skill::HEAVY_ARMOR,
+        'lost_items' => ['Maintenance Oil', 'Agricultural Survey', 'Bag of Tea Leaves'],
+        'unique_ability' => Ability::CONFIDENCE,
         'base_stats' => [
-            Stat::HIT_POINTS['slug'] => 29, Stat::LUCK['slug']       => 5,
-            Stat::STRENGTH['slug']   => 13, Stat::DEFENSE['slug']    => 6,
-            Stat::MAGIC['slug']      => 6,  Stat::RESISTANCE['slug'] => 4,
-            Stat::DEXTERITY['slug']  => 5,  Stat::CHARM['slug']      => 10,
+            Stat::HIT_POINTS['slug'] => 28, Stat::LUCK['slug']       => 6,
+            Stat::STRENGTH['slug']   => 8, Stat::DEFENSE['slug']     => 6,
+            Stat::MAGIC['slug']      => 5,  Stat::RESISTANCE['slug'] => 2,
+            Stat::DEXTERITY['slug']  => 6,  Stat::CHARM['slug']      => 7,
             Stat::SPEED['slug']      => 8
         ],
         'stat_growth' => [
-            Stat::HIT_POINTS['slug'] => 40, Stat::LUCK['slug']       => 30,
-            Stat::STRENGTH['slug']   => 55, Stat::DEFENSE['slug']    => 35,
-            Stat::MAGIC['slug']      => 45, Stat::RESISTANCE['slug'] => 35,
-            Stat::DEXTERITY['slug']  => 45, Stat::CHARM['slug']      => 60,
-            Stat::SPEED['slug']      => 40
+            Stat::HIT_POINTS['slug'] => 50, Stat::LUCK['slug']       => 40,
+            Stat::STRENGTH['slug']   => 45, Stat::DEFENSE['slug']    => 35,
+            Stat::MAGIC['slug']      => 20, Stat::RESISTANCE['slug'] => 20,
+            Stat::DEXTERITY['slug']  => 40, Stat::CHARM['slug']      => 40,
+            Stat::SPEED['slug']      => 50
         ],
+
         'max_stats' => [
-            Stat::HIT_POINTS['slug'] => 81, Stat::LUCK['slug']       => 42,
-            Stat::STRENGTH['slug']   => 81, Stat::DEFENSE['slug']    => 61,
-            Stat::MAGIC['slug']      => 72, Stat::RESISTANCE['slug'] => 47,
-            Stat::DEXTERITY['slug']  => 61, Stat::CHARM['slug']      => 85,
-            Stat::SPEED['slug']      => 57
+            Stat::HIT_POINTS['slug'] => 93, Stat::LUCK['slug']       => 56,
+            Stat::STRENGTH['slug']   => 64, Stat::DEFENSE['slug']    => 49,
+            Stat::MAGIC['slug']      => 40, Stat::RESISTANCE['slug'] => 36,
+            Stat::DEXTERITY['slug']  => 56, Stat::CHARM['slug']      => 57,
+            Stat::SPEED['slug']      => 70
         ],
         'initial_proficiency' => [
-            Skill::SWORD['slug']       => SkillRank::EPLUS,
-            Skill::AXE['slug']         => SkillRank::D,
-            Skill::AUTHORITY['slug']   => SkillRank::D,
-            Skill::HEAVY_ARMOR['slug'] => SkillRank::D
+            Skill::SWORD['slug']     => SkillRank::EPLUS,
+            Skill::LANCE['slug']     => SkillRank::D,
+            Skill::AXE['slug']       => SkillRank::EPLUS,
+            Skill::RIDING['slug']    => SkillRank::D
         ],
-        'strong_skills' => [ Skill::SWORD, Skill::AXE, Skill::AUTHORITY, Skill::HEAVY_ARMOR ],
-        'weak_skills'   => [ Skill::BOW, Skill::FAITH ],
+        'strong_skills' => [ Skill::SWORD, Skill::AXE, Skill::LANCE, Skill::RIDING ],
         'initial_abilities' => [ 
             Ability::SWORD_PROWESS_LV_1,
-            Ability::AXE_PROWESS_LV2,
-            Ability::AUTHORITY_PROWESS_LV1
+            Ability::LANCE_PROWESS_LV1,
+            Ability::AXE_PROWESS_LV1
         ],
-        'initial_combat_arts' => [ CombatArt::AXE_SMASH ],
+        'initial_combat_arts' => [ CombatArt::TEMPEST_LANCE ],
         'tracks' => [
             Skill::FAITH['slug'] => [
                 SkillRank::D['slug']     => Magic::HEAL,
                 SkillRank::DPLUS['slug'] => Magic::NOSFERATU,
-                SkillRank::C['slug']     => Magic::RECOVER,
-                SkillRank::B['slug']     => Magic::SERAPHIM
+                SkillRank::C['slug']     => Magic::WARD,
+                SkillRank::B['slug']     => Magic::RESTORE
             ], 
             Skill::REASON['slug'] => [
-                SkillRank::D['slug']     => Magic::FIRE,
-                SkillRank::C['slug']     => Magic::BOLGANONE,
-                SkillRank::B['slug']     => Magic::LUNA,
-                SkillRank::A['slug']     => Magic::HADES
+                SkillRank::D['slug']     => Magic::THUNDER,
+                SkillRank::DPLUS['slug'] => Magic::FIRE,
+                SkillRank::C['slug']     => Magic::THORON,
+                SkillRank::B['slug']     => Magic::BOLGANONE
             ]
-        ]*/
+        ],
+        'recruitment' => [
+            'default'                => [Stat::DEXTERITY['slug'] => 10, Skill::HEAVY_ARMOR['slug'] => SkillRank::C],
+            SkillRank::C['slug']     => [Stat::DEXTERITY['slug'] => 8,  Skill::HEAVY_ARMOR['slug'] => SkillRank::C],
+            SkillRank::CPLUS['slug'] => [Stat::DEXTERITY['slug'] => 6,  Skill::HEAVY_ARMOR['slug'] => SkillRank::DPLUS],
+            SkillRank::B['slug']     => [Stat::DEXTERITY['slug'] => 4,  Skill::HEAVY_ARMOR['slug'] => SkillRank::DPLUS],
+            SkillRank::BPLUS['slug'] => [Stat::DEXTERITY['slug'] => 2,  Skill::HEAVY_ARMOR['slug'] => SkillRank::EPLUS],
+            SkillRank::A['slug']     => []
+        ],
+        'description' => "Ferdinand is the eldest son and heir of House Aegir, which has held the office of prime minister of the Adrestian Empire for centuries. When he was 9 years old, his father, Ludwig, seized power in the Insurrection of the Seven, rendering Emperor Ionius IX politically impotent. He is very proud of his family's status as high-class nobility, but clashes with his father about what nobility actually is and means."
     ];
 
     const LINHARDT = [
         'slug' => "linhardt",
         'name' => "Linhardt",
         'gender' => 'm',
-        'house' => House::BLACK_EAGLES
+        'affiliation' => Affiliation::BLACK_EAGLES
     ];
 
     const CASPAR = [
         'slug' => "caspar",
         'name' => "Caspar",
         'gender' => 'm',
-        'house' => House::BLACK_EAGLES
+        'affiliation' => Affiliation::BLACK_EAGLES
     ];
 
     const BERNADETTA = [
         'slug' => "bernadetta",
         'name' => "Bernadetta",
         'gender' => 'f',
-        'house' => House::BLACK_EAGLES
+        'affiliation' => Affiliation::BLACK_EAGLES
     ];
 
     const DOROTHEA = [
         'slug' => "dorothea",
         'name' => "Dorothea",
         'gender' => 'f',
-        'house' => House::BLACK_EAGLES
+        'affiliation' => Affiliation::BLACK_EAGLES
     ];
 
     const PETRA = [
         'slug' => "petra",
         'name' => "Petra",
         'gender' => 'f',
-        'house' => House::BLACK_EAGLES
+        'affiliation' => Affiliation::BLACK_EAGLES
     ];
 
     const DEDUE = [
         'slug' => "dedue",
         'name' => "Dedue",
         'gender' => 'm',
-        'house' => House::BLUE_LIONS
+        'affiliation' => Affiliation::BLUE_LIONS
     ];
 
     const FELIX = [
         'slug' => "felix",
         'name' => "Felix",
         'gender' => 'm',
-        'house' => House::BLUE_LIONS
+        'affiliation' => Affiliation::BLUE_LIONS
     ];
 
     const ASHE = [
         'slug' => "ashe",
         'name' => "Ashe",
         'gender' => 'm',
-        'house' => House::BLUE_LIONS
+        'affiliation' => Affiliation::BLUE_LIONS
     ];
 
     const SYLVAIN = [
         'slug' => "sylvain",
         'name' => "Sylvain",
         'gender' => 'm',
-        'house' => House::BLUE_LIONS
+        'affiliation' => Affiliation::BLUE_LIONS
     ];
 
     const MERCEDES = [
         'slug' => "mercedes",
         'name' => "Mercedes",
         'gender' => 'f',
-        'house' => House::BLUE_LIONS
+        'affiliation' => Affiliation::BLUE_LIONS
     ];
 
     const ANNETTE = [
         'slug' => "annette",
         'name' => "Annette",
         'gender' => 'f',
-        'house' => House::BLUE_LIONS
+        'affiliation' => Affiliation::BLUE_LIONS
     ];
 
     const INGRID = [
         'slug' => "ingrid",
         'name' => "Ingrid",
         'gender' => 'f',
-        'house' => House::BLUE_LIONS
+        'affiliation' => Affiliation::BLUE_LIONS
     ];
 
     const LORENZ = [
         'slug' => "lorenz",
         'name' => "Lorenz",
         'gender' => 'm',
-        'house' => House::GOLDEN_DEER
+        'affiliation' => Affiliation::GOLDEN_DEER
     ];
 
     const RAPHAEL = [
         'slug' => "raphael",
         'name' => "Raphael",
         'gender' => 'm',
-        'house' => House::GOLDEN_DEER
+        'affiliation' => Affiliation::GOLDEN_DEER
     ];
 
     const IGNATZ = [
         'slug' => "ignatz",
         'name' => "Ignatz",
         'gender' => 'm',
-        'house' => House::GOLDEN_DEER
+        'affiliation' => Affiliation::GOLDEN_DEER
     ];
 
     const LYSITHEA = [
         'slug' => "lysithea",
         'name' => "Lysithea",
         'gender' => 'f',
-        'house' => House::GOLDEN_DEER
+        'affiliation' => Affiliation::GOLDEN_DEER
     ];
 
     const MARIANNE = [
         'slug' => "marianne",
         'name' => "Marianne",
         'gender' => 'f',
-        'house' => House::GOLDEN_DEER
+        'affiliation' => Affiliation::GOLDEN_DEER
     ];
 
     const HILDA = [
         'slug' => "hilda",
         'name' => "Hilda",
         'gender' => 'f',
-        'house' => House::GOLDEN_DEER
+        'affiliation' => Affiliation::GOLDEN_DEER
     ];
 
     const LEONIE = [
         'slug' => "leonie",
         'name' => "Leonie",
         'gender' => 'f',
-        'house' => House::GOLDEN_DEER
+        'affiliation' => Affiliation::GOLDEN_DEER
     ];
 
     const RHEA = [
         'slug' => "rhea",
         'name' => "Rhea",
-        'gender' => 'f'
+        'gender' => 'f',
+        'affiliation' => Affiliation::CHURCH_OF_SEIROS
     ];
 
     const SETETH = [
         'slug' => "seteth",
         'name' => "Seteth",
-        'gender' => 'm'
+        'gender' => 'm',
+        'affiliation' => Affiliation::CHURCH_OF_SEIROS
     ];
 
     const FLAYN = [
         'slug' => "flayn",
         'name' => "Flayn",
-        'gender' => 'f'
+        'gender' => 'f',
+        'affiliation' => Affiliation::CHURCH_OF_SEIROS
     ];
 
     const HANNEMAN = [
@@ -695,19 +721,22 @@ class Character extends \L41rx\FE3H\Enumeration
     const GILBERT = [
         'slug' => "gilbert",
         'name' => "Gilbert",
-        'gender' => 'm'
+        'gender' => 'm',
+        'affiliation' => Affiliation::CHURCH_OF_SEIROS
     ];
 
     const ALOIS = [
         'slug' => "alois",
         'name' => "Alois",
-        'gender' => 'm'
+        'gender' => 'm',
+        'affiliation' => Affiliation::CHURCH_OF_SEIROS
     ];
 
     const CATHERINE = [
         'slug' => "catherine",
         'name' => "Catherine",
-        'gender' => 'f'
+        'gender' => 'f',
+        'affiliation' => Affiliation::CHURCH_OF_SEIROS
     ];
 
     const SHAMIR = [
@@ -719,13 +748,15 @@ class Character extends \L41rx\FE3H\Enumeration
     const CYRIL = [
         'slug' => "cyril",
         'name' => "Cyril",
-        'gender' => 'm'
+        'gender' => 'm',
+        'affiliation' => Affiliation::CHURCH_OF_SEIROS
     ];
 
     const JERITZA = [
         'slug' => "jeritza",
         'name' => "Jeritza",
-        'gender' => 'm'
+        'gender' => 'm',
+        'affiliation' => Affiliation::ADRESTIA
     ];
 
     const ANNA = [

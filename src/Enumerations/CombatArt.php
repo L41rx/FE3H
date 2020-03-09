@@ -28,9 +28,9 @@ class CombatArt extends \L41rx\FE3H\Enumeration
     ];
 
     // Lance arts
-    const LANCE_SMASH = [
-        'slug' => 'lance_smash',
-        'name' => 'Smash',
+    const TEMPEST_LANCE = [
+        'slug' => 'tempest_lance',
+        'name' => 'Tempest Lance',
         'effect' => 'Unit makes a powerful lance attack with high crit (+8 Mt/Atk, +10 Hit, +20 Crit, 1 Range)'
     ];
 

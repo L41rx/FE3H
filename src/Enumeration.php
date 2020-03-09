@@ -80,23 +80,19 @@ abstract class Enumeration
         if (!isset($constant['name']))
             throw new Exception("Tried to use the default render without setting a name... really..");
 
-        $attempt_props = ['description', 'effect'];
+        $attempt_props = ['description', 'effect', 'type'];
 
         $title = null;
         foreach ($attempt_props as $prop)
-            if (isset($constant[$prop]))
+            if (isset($constant[$prop])) {
                 $title = $constant[$prop];
+                break;
+            }
 
         if (!is_null($title) && is_string($title))
-            $html = <<<HMTL
-                <span title="{$title}">
-                    {$constant['name']}
-                </span>
-            HMTL;
+            $html = "<span title=\"{$title}\">{$constant['name']}</span>";
         else
-            $html = <<<HMTL
-                {$constant['name']}
-            HMTL;
+            $html = "{$constant['name']}";
         
         return $html;
     }

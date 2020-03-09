@@ -22,7 +22,7 @@ class Character extends \L41rx\FE3H\Enumeration
             $affiliation = Affiliation::render($c['affiliation']['slug']);
         else
             $affiliation = "<span title=\"This character appears to be unaffiliated\">Unaffiliated</span>";
-                                                        // image
+        // image
         if (file_exists(__DIR__.'/../../public/img/character/'.$c['slug'].'.png'))
             $img = "/img/character/{$c['slug']}.png";
         else
@@ -98,7 +98,7 @@ class Character extends \L41rx\FE3H\Enumeration
             $weak_skills = "<li>none</li>";
 
         $inject_self = self::injectSelf($c);
-        $html = <<<HMTL
+        return <<<HMTL
             <character class="character" $inject_self>
                 <info_block>
                     <img src="{$img}" />
@@ -145,7 +145,6 @@ class Character extends \L41rx\FE3H\Enumeration
                 {$tracks}-->
             </character>
         HMTL;
-        return $html;
     }
 
     public static function default(string $property) {
@@ -210,7 +209,7 @@ class Character extends \L41rx\FE3H\Enumeration
                 SkillRank::DPLUS['slug'] => Magic::NOSFERATU,
                 SkillRank::C['slug']     => Magic::RECOVER,
                 SkillRank::A['slug']     => Magic::AURA
-            ], 
+            ],
             Skill::REASON['slug'] => [
                 SkillRank::D['slug']     => Magic::FIRE,
                 SkillRank::DPLUS['slug'] => Magic::THUNDER,
@@ -262,7 +261,7 @@ class Character extends \L41rx\FE3H\Enumeration
         ],
         'strong_skills' => [ Skill::SWORD, Skill::AXE, Skill::AUTHORITY, Skill::HEAVY_ARMOR ],
         'weak_skills'   => [ Skill::BOW, Skill::FAITH ],
-        'initial_abilities' => [ 
+        'initial_abilities' => [
             Ability::SWORD_PROWESS_LV_1,
             Ability::AXE_PROWESS_LV2,
             Ability::AUTHORITY_PROWESS_LV1
@@ -274,7 +273,7 @@ class Character extends \L41rx\FE3H\Enumeration
                 SkillRank::DPLUS['slug'] => Magic::NOSFERATU,
                 SkillRank::C['slug']     => Magic::RECOVER,
                 SkillRank::B['slug']     => Magic::SERAPHIM
-            ], 
+            ],
             Skill::REASON['slug'] => [
                 SkillRank::D['slug']     => Magic::FIRE,
                 SkillRank::C['slug']     => Magic::BOLGANONE,
@@ -328,7 +327,7 @@ class Character extends \L41rx\FE3H\Enumeration
         ],
         'strong_skills' => [ Skill::SWORD, Skill::LANCE, Skill::AUTHORITY ],
         'weak_skills'   => [ Skill::AXE, Skill::REASON ],
-        'initial_abilities' => [ 
+        'initial_abilities' => [
             Ability::SWORD_PROWESS_LV_1,
             Ability::LANCE_PROWESS_LV2,
             Ability::AUTHORITY_PROWESS_LV1
@@ -340,7 +339,7 @@ class Character extends \L41rx\FE3H\Enumeration
                 SkillRank::DPLUS['slug'] => Magic::NOSFERATU,
                 SkillRank::C['slug']     => Magic::RECOVER,
                 SkillRank::A['slug']     => Magic::AURA
-            ], 
+            ],
             Skill::REASON['slug'] => [
                 SkillRank::D['slug']     => Magic::THUNDER,
                 SkillRank::C['slug']     => Magic::THORON
@@ -394,7 +393,7 @@ class Character extends \L41rx\FE3H\Enumeration
         ],
         'strong_skills' => [ Skill::SWORD, Skill::BOW, Skill::AUTHORITY, Skill::RIDING, Skill::FLYING ],
         'weak_skills'   => [ Skill::AXE, Skill::REASON ],
-        'initial_abilities' => [ 
+        'initial_abilities' => [
             Ability::SWORD_PROWESS_LV_1,
             Ability::BOW_PROWESS_LV2,
             Ability::AUTHORITY_PROWESS_LV1
@@ -406,7 +405,7 @@ class Character extends \L41rx\FE3H\Enumeration
                 SkillRank::DPLUS['slug'] => Magic::NOSFERATU,
                 SkillRank::C['slug']     => Magic::RECOVER,
                 SkillRank::A['slug']     => Magic::SILENCE
-            ], 
+            ],
             Skill::REASON['slug'] => [
                 SkillRank::D['slug']     => Magic::WIND,
                 SkillRank::C['slug']     => Magic::SAGITTAE,
@@ -417,7 +416,7 @@ class Character extends \L41rx\FE3H\Enumeration
         'description' => 'Claude was born the son of the king of Almyra and a noble from Leicester. As a child, he often found himself discriminated against due to his Fódlan heritage. When he left Almyra for Leicester, he was again discriminated against due to his Almyran heritage. This led him to develop a desire to end Fódlan\'s long-standing isolationism in an effort to bring about a new world where everyone accepts everyone else. He was named heir to House Riegen in Imperial Year 1179 and enrolled at the Officers Academy at Garreg Mach Monastery the following year along with several people from his kingdom. During a training exercise with Princess Edelgard von Hresvelg of Adrestia and Prince Dimitri Alexandre Blaiddyd of Faerghus, he was attacked by bandits hired by an individual calling themselves the Flame Emperor, but was rescued by the mercenaries Byleth and Jeralt. Byleth was offered a teaching position at the Academy as a reward, and their choice of which house to lead would have far-reaching consequences for all of Fódlan.'
     ];
 
-    
+
     const HUBERT = [
         'slug' => "hubert",
         'name' => "Hubert",
@@ -455,7 +454,7 @@ class Character extends \L41rx\FE3H\Enumeration
         ],
         'strong_skills' => [ Skill::BOW, Skill::REASON, Skill::AUTHORITY, Skill::HEAVY_ARMOR ],
         'weak_skills'   => [ Skill::AXE, Skill::FAITH, Skill::FLYING ],
-        'initial_abilities' => [ 
+        'initial_abilities' => [
             Ability::BOW_PROWESS_LV1,
             Ability::REASON_PROWESS_LV1,
             Ability::AUTHORITY_PROWESS_LV1
@@ -465,7 +464,7 @@ class Character extends \L41rx\FE3H\Enumeration
                 SkillRank::D['slug']     => Magic::HEAL,
                 SkillRank::DPLUS['slug'] => Magic::NOSFERATU,
                 SkillRank::C['slug']     => Magic::RECOVER
-            ], 
+            ],
             Skill::REASON['slug'] => [
                 SkillRank::D['slug']     => Magic::MIASMA,
                 SkillRank::DPLUS['slug'] => Magic::MIRE_B,
@@ -525,7 +524,7 @@ class Character extends \L41rx\FE3H\Enumeration
             Skill::RIDING['slug']    => SkillRank::D
         ],
         'strong_skills' => [ Skill::SWORD, Skill::AXE, Skill::LANCE, Skill::RIDING ],
-        'initial_abilities' => [ 
+        'initial_abilities' => [
             Ability::SWORD_PROWESS_LV_1,
             Ability::LANCE_PROWESS_LV1,
             Ability::AXE_PROWESS_LV1
@@ -537,7 +536,7 @@ class Character extends \L41rx\FE3H\Enumeration
                 SkillRank::DPLUS['slug'] => Magic::NOSFERATU,
                 SkillRank::C['slug']     => Magic::WARD,
                 SkillRank::B['slug']     => Magic::RESTORE
-            ], 
+            ],
             Skill::REASON['slug'] => [
                 SkillRank::D['slug']     => Magic::THUNDER,
                 SkillRank::DPLUS['slug'] => Magic::FIRE,

@@ -31,6 +31,9 @@
 
 	description {
 		font-style: italic;
+		display: block;
+		height: 112px;
+		overflow: -moz-hidden-unscrollable;
 	}
 
 	[title] {

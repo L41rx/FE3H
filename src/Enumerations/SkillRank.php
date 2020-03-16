@@ -36,56 +36,73 @@ class SkillRank extends Enumeration
 
     const E = [
         'slug' => 'e',
-        'name' => 'E'
+        'name' => 'E',
+        'xp' => 40
     ];
 
     const EPLUS = [
         'slug' => 'e_plus',
-        'name' => 'E+'
+        'name' => 'E+',
+        'xp' => 60
     ];
 
     const D = [
         'slug' => 'd',
-        'name' => 'D'
+        'name' => 'D',
+        'xp' => 80
     ];
 
     const DPLUS = [
         'slug' => 'd_plus',
-        'name' => 'D+'
+        'name' => 'D+',
+        'xp' => 120
     ];
 
     const C = [
         'slug' => 'c',
-        'name' => 'C'
+        'name' => 'C',
+        'xp' => 160
     ];
 
     const CPLUS = [
         'slug' => 'c_plus',
-        'name' => 'C+'
+        'name' => 'C+',
+        'xp' => 220
     ];
 
     const B = [
         'slug' => 'b',
-        'name' => 'B'
+        'name' => 'B',
+        'xp' => 280
     ];
 
     const BPLUS = [
         'slug' => 'b_plus',
-        'name' => 'B+'
+        'name' => 'B+',
+        'xp' => 360             // i.e. it takes 360 to rank up from BPLUS to A
     ];
 
     const A = [
         'slug' => 'a',
-        'name' => 'A'
+        'name' => 'A',
+        'xp' => 440
     ];
 
     const APLUS = [
         'slug' => 'a_plus',
-        'name' => 'A+'
+        'name' => 'A+',
+        'xp' => 760
     ];
 
     const S = [
         'slug' => 's',
-        'name' => 'S'
+        'name' => 'S',
+        'xp' => 1080
+    ];
+
+    const SPLUS = [
+        'slug' => 's_plus',
+        'name' => 'S+',
+        'xp' => 1080
     ];
 }

@@ -102,7 +102,6 @@ class SkillRank extends Enumeration
 
     const SPLUS = [
         'slug' => 's_plus',
-        'name' => 'S+',
-        'xp' => 1080
+        'name' => 'S+'
     ];
 }

@@ -8,7 +8,7 @@ class Certification extends \L41rx\FE3H\Enumeration
 {
     public static function default(string $property) {
         switch ($property) {
-            case 'requiremed_proficiency':
+            case 'required_proficiency':
             case 'proficiency':
             case 'base_stats':
             case 'stat_growth_bonus':
@@ -18,9 +18,12 @@ class Certification extends \L41rx\FE3H\Enumeration
             case 'magical':
                 return false;
                 break;
+            case 'name':
+                return 'The Immaculate One (placeholder name)';
+                break;
         }
 
-        return parent::default();
+        return parent::default($property);
     }
 
     // Trainee

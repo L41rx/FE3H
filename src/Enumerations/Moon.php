@@ -7,6 +7,16 @@ use L41rx\FE3H\Enumeration;
 
 class Moon extends Enumeration
 {
+	public static function default(string $property) {
+        switch ($property) {
+            case 'name':
+            case 'location':
+                return "Unknown";
+                break;
+        }
+
+        return parent::default($property);
+    }
 
 	const GARLAND = [
 		'slug' => 'garland',

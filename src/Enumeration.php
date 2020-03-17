@@ -5,6 +5,7 @@ namespace L41rx\FE3H;
 
 
 use Exception;
+use L41rx\FE3H\Traits\ConvertsCamel;
 
 /**
  * Make enumerated classes like:
@@ -18,6 +19,8 @@ use Exception;
  */
 abstract class Enumeration
 {
+    use ConvertsCamel;
+
     public static function all() {
         $reflect = new \ReflectionClass(static::class);
     	return $reflect->getConstants();
@@ -72,6 +75,58 @@ abstract class Enumeration
         return $entity[$property];
     }
 
+    /**
+     * Automagic first index from class static name. Check if dot separated value exists. return it. If not, send to default
+     * 
+     * @param Enumeration $enum
+     * @param string $index
+     * 
+     * @return mixed
+     */
+    public function derive(array $enum, string $index_string_dot_separated)
+    {
+        // try going all the way!
+        $maybe_enum = explode('\\', static::class);
+        $maybe_enum = self::decamelize($maybe_enum[count($maybe_enum) - 1]);
+        $indices = [$maybe_enum];
+        foreach (explode('.', $index_string_dot_separated) as $zz)
+            array_push($indices, $zz);
+        $e = $enum;
+        $count = 1;
+        foreach ($indices as $in) {
+            if (!isset($e[$in])) // $e is no longer important. Maybe affiliation, and the remaining indices.
+                break;
+
+            if ($count === count($indices)) // natural finish of the for loop would exit here
+                return $e[$in];
+
+            $count++;
+            $e = $e[$in];
+            $maybe_enum = $in;
+        }
+
+        // Well.. it broke ! lets start the default chain.
+        for ($i = 0; $i < $count - 1; $i++)
+            array_shift($indices);
+        $index_dot_string = implode('.', $indices);
+        $maybe_enum = self::camelize($maybe_enum);
+
+        if (strpos($maybe_enum, '\\') !== false) {} // lol 3am
+        else {
+            $namespace = explode('\\', static::class);
+            unset($namespace[count($namespace) - 1]);
+            $namespace = implode('\\', $namespace);
+            $maybe_enum = $namespace.'\\'.$maybe_enum;
+        }
+
+        if (!class_exists($maybe_enum)) {
+            trigger_error("Riding the derive chain and tried to access unknown enumeration, '{$maybe_enum}'. Do you know this guy?", E_USER_NOTICE);
+            return null; // semi-tru default
+        }
+
+        return ($maybe_enum)::default($index_dot_string);
+    }
+
 
     public static function render($slug)
     {
@@ -98,9 +153,33 @@ abstract class Enumeration
     }
 
 
-
+    /**
+     * 
+     * lol this works with derive.
+     * 
+     */
     public static function default(string $property) {
-        return null;
+        $indices = explode('.', $property);
+        if (count($indices) === 1)
+            return null; // tru default
+
+        $maybe_enum = array_shift($indices);
+        $maybe_enum = self::camelize($maybe_enum);
+
+        if (strpos($maybe_enum, '\\') !== false) {} // lol 3am
+        else {
+            $namespace = explode('\\', static::class);
+            unset($namespace[count($namespace) - 1]);
+            $namespace = implode('\\', $namespace);
+            $maybe_enum = $namespace.'\\'.$maybe_enum;
+        }
+
+        if (!class_exists($maybe_enum)) {
+            trigger_error("Riding the default chain and tried to access unknown enumeration, '{$maybe_enum}'. Do you know this guy?", E_USER_NOTICE);
+            return null; // semi-tru default
+        }
+
+        return ($maybe_enum)::default(implode('.', $indices));
     }
 
     /**

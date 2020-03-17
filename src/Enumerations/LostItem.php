@@ -6,6 +6,16 @@ use L41rx\FE3H\Enumeration;
 
 class LostItem extends Enumeration
 {
+	public static function default(string $property) {
+        switch ($property) {
+            case 'location':
+                return 'Unknown';
+                break;
+        }
+
+        return parent::default($property);
+    }
+
 
 	public static function render($slug)
     {

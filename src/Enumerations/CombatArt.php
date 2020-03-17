@@ -15,7 +15,7 @@ class CombatArt extends \L41rx\FE3H\Enumeration
                 break;
         }
 
-        return parent::default();
+        return parent::default($property);
     }
 
     // Axe arts (is this the same smash ?)

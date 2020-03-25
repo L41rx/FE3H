@@ -74,4 +74,19 @@ class CombatArt extends \L41rx\FE3H\Enumeration
         'effect' => 'Unit moves one space away from an adjacent ally and pulls them along'
     ];
 
+    const SUBDUE = [
+        'slug' => 'subdue',
+        'name' => 'Subdue',
+        'weapon' => Skill::SWORD['slug'],
+        'effect' => "Hit +20. Durability -3. Leaves foe with 1hp at minimum."
+    ];
+
+
+    // Class specific
+    const TRIANGLE_ATTACK = [
+        'slug' => 'triangle_attack',
+        'name' => 'Triangle Attack',
+        'effect' => 'Must be a pegasus knight. A flurry of attacks the sisters perform in tandem. This combat art can only be triggered when 3 allied Flying units(including the user) are adjacent to the same enemy. Mt +8. Hit +30. Avoid +40. Range 1. Durability -3'
+    ];
+
 }

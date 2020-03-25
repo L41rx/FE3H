@@ -1,0 +1,30 @@
+.certification {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  padding: 20px;
+  display: flex;
+  font-size: 16px;
+  width: 500px; }
+  .certification * {
+    vertical-align: top; }
+  .certification info_block {
+    position: relative; }
+  .certification img {
+    width: 100px;
+    margin: 6px 5px 0 0;
+    float: left; }
+  .certification name {
+    font-weight: 700;
+    font-variant: small-caps;
+    font-size: 2em;
+    margin-bottom: 15px;
+    display: inline-block; }
+  .certification description {
+    font-style: italic;
+    display: block;
+    height: 112px;
+    overflow: -moz-hidden-unscrollable; }
+  .certification [title] {
+    cursor: help;
+    text-decoration: underline; }

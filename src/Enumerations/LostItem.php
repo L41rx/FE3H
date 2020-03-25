@@ -54,6 +54,14 @@ class LostItem extends Enumeration
 		'moon' => Moon::GARLAND
 	];
 
+	const GOLD_EARRING = [
+		'slug' => 'gold_earring',
+		'name' => "Gold Earring",
+		'owner' => 'dedue',
+		'location' => "Outside?",
+		'moon' => Moon::BLUE_SEA
+	];
+
 	const HAND_DRAWN_MAP = [
 		'slug' => 'hand_drawn_map',
 		'name' => "Hand Drawn Map",

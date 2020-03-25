@@ -27,13 +27,13 @@ class Stat extends \L41rx\FE3H\Enumeration
     const DEXTERITY = [
         'slug' => 'dex',
         'name' => 'Dexterity',
-        'description' => 'Maybe like strength but for ranged? idk'
+        'description' => 'Affects avoid and hit chances'
     ];
 
     const SPEED = [
         'slug' => 'spd',
         'name' => 'Speed',
-        'description' => 'If your speed works out two be twice your opponents you get to hit twice'
+        'description' => 'If your speed is 4 > your opponents you get to hit twice'
     ];
 
     const LUCK = [

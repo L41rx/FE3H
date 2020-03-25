@@ -72,3 +72,26 @@ class Moon extends Enumeration
 		'order' => 8
 	];
 }
+
+/*
+guardian moon
+pegasis
+lone			// ???
+great tree		// ??
+harpstring		// ???
+garland
+blue sea
+verdant rain
+horsebow
+wyvern
+red wolf
+ethereal
+
+all kills-
+1 skillxp dmitri axe(E)
+2 dmitri bow(E)
+3 byleth sword(D+)
+
+conwhateverly, 26 xp for singing in faith for ingrtid and ashe. st macuiel day, 2nd month
+
+*/
